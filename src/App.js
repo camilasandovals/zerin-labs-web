@@ -1,11 +1,23 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './scenes/Home';
+import SignUp from './scenes/SignUp';
+import Login from './scenes/Login';
+import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
+import Landing from './scenes/Landing';
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        
-      </header>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Landing />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/signup' element={<SignUp />} />
+          <Route path='/login' element={<Login />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
