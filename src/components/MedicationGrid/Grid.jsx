@@ -10,13 +10,14 @@ export default function Grid(){
         .then(resp => resp.json())
         .then(setMedications)
         .catch(alert)
+        console.log(medications)
     },[])
     
     return(
         <Container>
             <Row>
                 {
-                    medications.map(
+                    medications?.map(
                         (data) => (
                             data
                             ? <Medication data = {data}/>
