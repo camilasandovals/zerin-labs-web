@@ -28,7 +28,7 @@ export default function TestAddMedication(){
 
     return(
     <>
-            <h2>Add medication</h2>
+        <h2>Add New Medication</h2>
             <form onSubmit={handleAddMed}>
                 <label htmlFor="name">Name
                     <input

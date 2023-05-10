@@ -11,7 +11,7 @@ export default function Grid(){
         .then(setMedications)
         .catch(alert)
         console.log(medications)
-    },[])
+    },[medications])
     
     return(
         <Container>

@@ -4,11 +4,16 @@ import Card from 'react-bootstrap/Card';
 
 export default function Medication({data}){
 
-    // const handleDelete = async (id) => {
-    //     const response = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
-    //         method: "DELETE",
-    //     })
-    // }
+    const handleUpdate = async (id) => {
+        const update = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
+            method: "PATCH",
+        })
+    }
+    const handleDelete = async (id) => {
+        const response = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
+            method: "DELETE",
+        })
+    }
 
     return (
     <Col key={data.id}>
@@ -20,7 +25,7 @@ export default function Medication({data}){
             <Card.Text>{data.dosage} {data.unit}</Card.Text>
             <Card.Text>{data.frequency}</Card.Text>
             <Button variant="primary" 
-            // onClick={() => handleDelete(data._id)}
+            onClick={() => handleDelete(data._id)}
             >Taken!</Button>
         </Card.Body>
         </Card>
