@@ -1,26 +1,28 @@
-import Button from 'react-bootstrap/Button';
-import Modal from 'react-bootstrap/Modal';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom"
+import { Button, Modal } from "react-bootstrap"
+import Grid from "../components/MedicationGrid/Grid"
+import { PlusCircleFill } from "react-bootstrap-icons"
 
 export default function AddMed() {
+    const [showModal, setShowModal] = useState(false);
   return (
-    <div
-      className="modal show"
-      style={{ display: 'block', position: 'initial' }}
-    >
-      <Modal.Dialog>
-        <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+    <>
+    <PlusCircleFill size={60} color={"violet"} onClick={() => setShowModal(true)} />
+    <Modal show={showModal} onHide={() => setShowModal(false)}>
+        <Modal.Header closeButton onClick={() => setShowModal(false)}>
+        <Modal.Title>Modal title</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
-          <p>Modal body text goes here.</p>
+        <p>Modal body text goes here.</p>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary">Close</Button>
-          <Button variant="primary">Save changes</Button>
+        <Button variant="secondary" onClick={() => setShowModal(false)}>Close</Button>
+        <Button variant="primary">Save changes</Button>
         </Modal.Footer>
-      </Modal.Dialog>
-    </div>
+    </Modal >
+    </>
   );
 }

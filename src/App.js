@@ -2,9 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './scenes/Home';
 import SignUp from './scenes/SignUp';
 import Login from './scenes/Login';
+import Landing from './scenes/Landing';
 import "bootstrap/dist/css/bootstrap.min.css"
 import './App.css';
-import Landing from './scenes/Landing';
 
 
 function App() {

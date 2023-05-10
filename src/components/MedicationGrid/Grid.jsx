@@ -20,7 +20,7 @@ export default function Grid(){
                     medications?.map(
                         (data) => (
                             data
-                            ? <Medication data = {data}/>
+                            ? <Medication key={data._id} data={data}/>
                             : <p> Loading ...</p>
                         )
                     )
