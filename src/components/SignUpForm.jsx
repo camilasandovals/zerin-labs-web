@@ -5,7 +5,7 @@ export default function SignUpForm() {
     const navigate = useNavigate()
     return(
         <Container>
-            <h2>SignUp</h2>
+            <h2>Sign Up</h2>
             <p>Already an user? <span onClick={() => navigate('/login')}>Login!</span></p>
             <Form>
                 <Form.Group className="mb-3" >
@@ -27,6 +27,10 @@ export default function SignUpForm() {
                 onClick={() => navigate('/home')}>
                     Sign up
                 </Button>
+                <p>
+                    Or sign up with 
+                    <Button>Google</Button>
+                </p>
             </Form>
         </Container>
     )

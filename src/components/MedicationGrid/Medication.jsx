@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-export default function Medication(){
+export default function Medication({data}){
     return (
     <Card style={{ width: '18rem' }}>
       <Card.Img variant="top" src="https://i0.wp.com/vitalrecord.tamhsc.edu/wp-content/uploads/2017/01/pills-tamhsc.jpg?fit=1100%2C625&ssl=1" />

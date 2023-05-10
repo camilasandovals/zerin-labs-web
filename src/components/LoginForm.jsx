@@ -1,18 +1,38 @@
+import { Form, Button, Container } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
+
 export default function LoginForm() {
+    const navigate = useNavigate()
+
     return(
-        <>
+        <Container>
             <h2>Login</h2>
-            <form >
-                <label htmlFor="username">Username
-                <input type="text" />
-                </label>
-                <br />
-                <label htmlFor="password">Password
-                <input type="text" />
-                </label>
-                <br/>
-                <input type="submit" value="Login" />
-            </form>
-        </>
+            <p>Not an user? <span onClick={() => navigate('/signup')}>Sign up!</span></p>
+            <Form>
+                <Form.Group className="mb-3" >
+                    <Form.Label>Email address</Form.Label>
+                    <Form.Control type="email" placeholder="Enter email" />
+                    <Form.Text>
+                    We'll never share your email with anyone else.
+                    </Form.Text>
+                </Form.Group>
+
+                <Form.Group className="mb-3">
+                    <Form.Label>Password</Form.Label>
+                    <Form.Control type="password" placeholder="Password" />
+                </Form.Group>
+                <Form.Group className="mb-3">
+                    <Form.Check type="checkbox" label="Keep me logged in" />
+                </Form.Group>
+                <Button variant="primary" type="submit"
+                onClick={() => navigate('/home')}>
+                    Login
+                </Button>
+                <p>
+                    Or Login with 
+                    <Button>Google</Button>
+                </p>
+            </Form>
+        </Container>
     )
 }

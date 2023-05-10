@@ -19,13 +19,12 @@ export default function Grid(){
                     medications.map(
                         (data) => (
                             data
-                            ? <Medication />
+                            ? <Medication data = {data}/>
                             : <p> Loading ...</p>
                         )
                     )
                 }
             </Row>
-            <Medication />
         </Container>
     )
 }
