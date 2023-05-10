@@ -16,7 +16,13 @@ export default function Grid(){
         <Container>
             <Row>
                 {
-                    <Medication />
+                    medications.map(
+                        (data) => (
+                            data
+                            ? <Medication />
+                            : <p> Loading ...</p>
+                        )
+                    )
                 }
             </Row>
             <Medication />
