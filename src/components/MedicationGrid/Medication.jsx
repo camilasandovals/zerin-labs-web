@@ -33,7 +33,7 @@ export default function Medication({data}){
     return (
     <Col key={data.id}>
         <Card style={{ width: '18rem' }}>
-        <Card.Img variant="top" src="https://i0.wp.com/vitalrecord.tamhsc.edu/wp-content/uploads/2017/01/pills-tamhsc.jpg?fit=1100%2C625&ssl=1" />
+        <Card.Img variant="top" src={data.img} /> 
         <Card.Body>
             <Card.Title>{data.nameMed}</Card.Title>
             <Card.Text>{data.quantity}</Card.Text>
