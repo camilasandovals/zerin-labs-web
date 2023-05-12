@@ -23,8 +23,7 @@ export default function SignUpForm() {
                 <Form.Group className="mb-3">
                     <Form.Check type="checkbox" label="Keep me logged in" />
                 </Form.Group>
-                <Button variant="primary" type="submit"
-                onClick={() => navigate('/home')}>
+                <Button variant="primary" type="submit" onClick={() => navigate('/home')}>
                     Sign up
                 </Button>
                 <p>

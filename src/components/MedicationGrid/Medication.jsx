@@ -1,18 +1,33 @@
-import { Col } from 'react-bootstrap';
+import { useState, useContext } from "react";
+import { UserMedications } from "../../App"
+import { Col, Modal } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import AddMed from '../AddMed/AddMedForm'
 
 export default function Medication({data}){
+    const [medications, setMedications] = useContext(UserMedications)
+    const [showModal, setShowModal] = useState(false);
+    console.log(setMedications)
 
-    const handleUpdate = async (id) => {
-        const update = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
-            method: "PATCH",
-        })
-    }
+    // const handleUpdate = async (id) => {
+    //     const modifiedMed = {
+
+    //     }
+    //     const update = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type": "application/json" 
+    //         },
+    //         body: JSON.stringify(modifiedMed)
+    //     })
+    // }
     const handleDelete = async (id) => {
-        const response = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
+        const response = await fetch(`http://localhost:3001/api/medications/${id}`, {
             method: "DELETE",
         })
+        const data = await response.json();
+        setMedications(data);
     }
 
     return (
@@ -27,6 +42,14 @@ export default function Medication({data}){
             <Button variant="primary" 
             onClick={() => handleDelete(data._id)}
             >Taken!</Button>
+            <Button variant="primary" 
+            onClick={() => setShowModal(true)}
+            >Update!</Button>
+            <Modal show={showModal} onHide={() => setShowModal(false)}>
+                <Modal.Body>
+                <AddMed setMedications={setMedications} showModal={showModal} setShowModal={setShowModal}/>
+                </Modal.Body>
+            </Modal >
         </Card.Body>
         </Card>
     </Col>

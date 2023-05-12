@@ -1,14 +1,24 @@
+import { useContext, useEffect } from "react"
+import { UserMedications } from "../App"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import Grid from "../components/MedicationGrid/Grid"
 import { useNavigate } from "react-router-dom"
-import AddMed from "../components/AddMed/Modal";
+import Modal from "../components/AddMed/AddModal";
 import User from "../components/User";
 import Motivation from "../components/Motivation";
 
 
 export default function Home(){
+    const [medications, setMedications] = useContext(UserMedications)
     const navigate = useNavigate();
 
+    useEffect(()=>{
+        fetch("http://localhost:3001/api/medications")
+        .then(resp => resp.json())
+        .then(setMedications)
+        .catch(alert)
+        
+    },[])
   
     return(
         <Container>
@@ -24,7 +34,7 @@ export default function Home(){
                         <Grid />
                     </Row>
                     <Row>
-                        <AddMed />
+                        <Modal />
                     </Row>
                     <Row>
                         <Button onClick={() => navigate('/login')}>Logout</Button> 

@@ -1,17 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap"
 import Medication from "../MedicationGrid/Medication"
-import { useEffect, useState } from "react"
+import { useContext } from "react"
+import { UserMedications } from "../../App"
 
 export default function Grid(){
-    const [medications, setMedications] = useState()
-
-    useEffect(()=>{
-        fetch("http://54.234.48.173:3001/api/medications")
-        .then(resp => resp.json())
-        .then(setMedications)
-        .catch(alert)
-        console.log(medications)
-    },[medications])
+    const [medications, setMedications] = useContext(UserMedications)
     
     return(
         <Container>

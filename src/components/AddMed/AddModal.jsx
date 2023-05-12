@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserMedications } from "../../App"
 import {  Modal } from "react-bootstrap"
 import { PlusCircleFill } from "react-bootstrap-icons"
-import TestAddMedication from "./AddMed";
+import AddMed from "./AddMedForm";
 
-export default function AddMed() {
+export default function AddModal() {
+  
     const [showModal, setShowModal] = useState(false);
   return (
     <>
     <PlusCircleFill size={60} color={"violet"} onClick={() => setShowModal(true)} />
     <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Body>
-        <TestAddMedication showModal={showModal} setShowModal={setShowModal}/>
+        <AddMed setShowModal={setShowModal}/>
         </Modal.Body>
     </Modal >
     </>
