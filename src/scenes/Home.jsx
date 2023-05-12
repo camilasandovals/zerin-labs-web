@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react"
-import { UserMedications } from "../App"
+import { MedicationsContext } from "../App"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import Grid from "../components/MedicationGrid/Grid"
 import { useNavigate } from "react-router-dom"
@@ -9,7 +9,7 @@ import Motivation from "../components/Motivation";
 
 
 export default function Home(){
-    const [medications, setMedications] = useContext(UserMedications)
+    const [medications, setMedications] = useContext(MedicationsContext)
     const navigate = useNavigate();
 
     useEffect(()=>{

@@ -1,10 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap"
 import Medication from "../MedicationGrid/Medication"
 import { useContext } from "react"
-import { UserMedications } from "../../App"
+import { MedicationsContext } from "../../App"
 
 export default function Grid(){
-    const [medications, setMedications] = useContext(UserMedications)
+    const [medications, setMedications] = useContext(MedicationsContext)
     
     return(
         <Container>

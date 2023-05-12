@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { UserMedications } from "../../App"
+import { MedicationsContext } from "../../App"
 import { Col, Modal } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom"
 import Button from 'react-bootstrap/Button';
@@ -8,22 +8,11 @@ import AddMed from '../AddMed/AddMedForm'
 import { CheckCircleFill } from "react-bootstrap-icons";
 
 export default function Medication({data}){
-    const [medications, setMedications] = useContext(UserMedications)
+    const [medications, setMedications] = useContext(MedicationsContext)
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
     
-    // const handleUpdate = async (id) => {
-    //     const modifiedMed = {
 
-    //     }
-    //     const update = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json" 
-    //         },
-    //         body: JSON.stringify(modifiedMed)
-    //     })
-    // }
     const handleDelete = async (id) => {
         const response = await fetch(`http://localhost:3001/api/medications/${id}`, {
             method: "DELETE",

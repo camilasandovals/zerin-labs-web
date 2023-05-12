@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { Form, Button, Container } from "react-bootstrap"
-import { UserMedications } from "../../App"
+import { MedicationsContext } from "../../App"
 import Select from "react-select";
 import options from "../../converter/drugsconverted.json";
 
@@ -10,7 +10,7 @@ export default function AddMedForm({setShowModal}){
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
     const [frequency, setFrequency] = useState('');
-    const [medications, setMedications] = useContext(UserMedications)
+    const [medications, setMedications] = useContext(MedicationsContext)
     const [medImg, setMedImg] = useState("")
 
     const image =""
@@ -112,7 +112,7 @@ export default function AddMedForm({setShowModal}){
                 <Form.Control as="textarea" rows={1} />
             </Form.Group>
 
-            <Button variant="primary" type="submit">Add</Button>
+            <Button variant="primary" type="submit">Save</Button>
     
         </Form>
     </Container>  
