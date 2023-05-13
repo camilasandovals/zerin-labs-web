@@ -1,5 +1,5 @@
-import { Col, Container, Row } from "react-bootstrap"
-import Medication from "../MedicationGrid/Medication"
+import { Container, Row } from "react-bootstrap"
+import MedicationCard from "./Card"
 import { useContext } from "react"
 import { MedicationsContext } from "../../App"
 
@@ -12,9 +12,9 @@ export default function Grid(){
                 {
                     medications?.map(
                         (data) => (
-                            data
-                            ? <Medication key={data._id} data={data}/>
-                            : <p> Loading ...</p>
+                            data.show
+                            ? <MedicationCard key={data._id} data={data}/>
+                            : <p> </p>
                         )
                     )
                 }

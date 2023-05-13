@@ -5,16 +5,18 @@ import Select from "react-select";
 import options from "../../converter/drugsconverted.json";
 
 export default function AddMedForm({setShowModal}){
+    const [medications, setMedications] = useContext(MedicationsContext)
     const [nameMed, setName ] = useState('');
     const [dosage, setDosage] = useState('');
     const [quantity, setQuantity] = useState('');
     const [unit, setUnit] = useState('');
     const [frequency, setFrequency] = useState('');
-    const [medications, setMedications] = useContext(MedicationsContext)
     const [medImg, setMedImg] = useState("")
+    const [notes, setNotes] = useState("")
+    
 
-    const image =""
-    const image2 =""
+    const image ="/images/MED1.png"
+    const image2 ="/images/MED2.png"
 
     const units =  
     [ 
@@ -29,10 +31,10 @@ export default function AddMedForm({setShowModal}){
     const handleAddMed = (e) => {
         e.preventDefault()
         console.log(medImg)
-        fetch("http://localhost:3001/api/medications", {
+        fetch("http://54.234.48.173:3001/api/medications", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, medImg})
+            body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, medImg, notes, show:true})
        })
            .then(resp => resp.json())
            .then( data => {
@@ -49,14 +51,13 @@ export default function AddMedForm({setShowModal}){
 
     const handleImageChange = (event) => {
         setMedImg(event.target.value);
-        
       };
     
 
     return(
         <>
         <Container>
-        <h2 className="mb-4">Add medication</h2>
+        <h2 className="mb-4 mt-4">Add medication</h2>
         <Form  onSubmit={handleAddMed}>
             <Form.Group className="mb-3">
                 <Form.Label>Medication Name</Form.Label>
@@ -91,7 +92,7 @@ export default function AddMedForm({setShowModal}){
                     checked={medImg === image}
                     onChange={handleImageChange}
                     />
-                    <img src={image}  />
+                    <img src={image}  width={50}/>
                 </label>
 
                 <label className="btn">
@@ -103,13 +104,14 @@ export default function AddMedForm({setShowModal}){
                     checked={medImg === image2}
                     onChange={handleImageChange}
                     />
-                    <img src={image2}  />
+                    <img src={image2}  width={50}/>
                 </label>
                 </div>
             {/* Radio ends */}
-            <Form.Group className="mb-3">
+            <Form.Group className="mb-3" >
                 <Form.Label>Notes</Form.Label>
-                <Form.Control as="textarea" rows={1} />
+                <Form.Control type="text" value={notes}  
+                onChange={(e) => {setNotes(e.target.value)}}/>
             </Form.Group>
 
             <Button variant="primary" type="submit">Save</Button>

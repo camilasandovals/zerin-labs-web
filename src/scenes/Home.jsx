@@ -13,7 +13,7 @@ export default function Home(){
     const navigate = useNavigate();
 
     useEffect(()=>{
-        fetch("http://localhost:3001/api/medications")
+        fetch("http://54.234.48.173:3001/api/medications")
         .then(resp => resp.json())
         .then(setMedications)
         .catch(alert)
