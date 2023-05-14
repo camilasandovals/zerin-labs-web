@@ -28,11 +28,7 @@ export default function SignUpForm() {
         if (e && e.preventDefault) {
             e.preventDefault();
         }
-        const result = await createUserWithEmailAndPassword(auth, email, password)
-        .catch(err => alert(err));
-        console.log(result.user);
-        setUser(result.user)
-        fetch("http://54.234.48.173:3001/api/users", {
+        fetch("http://3.95.14.19:3001/api/users", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
             body: JSON.stringify({email, password})
@@ -43,9 +39,13 @@ export default function SignUpForm() {
                    alert(data.message)
                    return
                }
-           })
-        .catch(alert) 
-        navigate('/home')
+               setUser(data)
+               console.log(user);
+               navigate('/home')
+               createUserWithEmailAndPassword(auth, email, password)
+               
+           } ).catch(err => alert(err));
+              
     }
 
     const signInWithGoogle = async () => {
@@ -55,7 +55,7 @@ export default function SignUpForm() {
             setUser(result.user)
             const { email, uid } = auth.currentUser
             console.log(email, uid)
-            fetch("http://54.234.48.173:3001/api/users", {
+            fetch("http://3.95.14.19:3001/api/users", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   
             body: JSON.stringify({email}, {uid})  // I AM NOT SENDING THE CORRECT UID
@@ -92,11 +92,11 @@ export default function SignUpForm() {
                 <Button variant="primary" type="submit">
                     Sign up
                 </Button>
+            </Form>
                 <p>
                     Or sign up with 
                     <Button onClick={signInWithGoogle}>Google</Button>
                 </p>
-            </Form>
         </Container>
     )
 }

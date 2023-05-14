@@ -7,7 +7,7 @@ export default function MedsHistoryGrid(){
     const [medications, setMedications] = useContext(MedicationsContext)
     
     useEffect(()=>{
-        fetch("http://54.234.48.173:3001/api/medications")
+        fetch("http://3.95.14.19:3001/api/medications")
         .then(resp => resp.json())
         .then(setMedications)
         .catch(alert)

@@ -28,11 +28,15 @@ export default function LoginForm() {
         if (e && e.preventDefault) {
             e.preventDefault();
         }
-        const response = await signInWithEmailAndPassword(auth, email, password)
-            .catch(err => alert(err))
+
+        try {
+            const response = await signInWithEmailAndPassword(auth, email, password)
             setUser(response.user);
-            console.log(email)
-        navigate("/home")
+            navigate("/home")
+        }
+        catch (error) {
+            alert("Email not registered. Try signing in.")
+        }
     }
 
     

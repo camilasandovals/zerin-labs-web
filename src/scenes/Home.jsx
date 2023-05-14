@@ -20,7 +20,7 @@ export default function Home(){
     }
 
     useEffect(()=>{
-        fetch("http://54.234.48.173:3001/api/medications")
+        fetch("http://3.95.14.19:3001/api/medications")
         .then(resp => resp.json())
         .then(setMedications)
         .catch(alert)

@@ -9,7 +9,7 @@ export default function MedDetails() {
     const [selectedMedication, setSelectedMedication] = useContext(SelectedMedicationContext);
 
     useEffect(()=>{
-        fetch(`http://54.234.48.173:3001/api/medications/${id}`)
+        fetch(`http://3.95.14.19:3001/api/medications/${id}`)
         .then(resp => resp.json())
         .then(setSelectedMedication)
         .catch(alert)

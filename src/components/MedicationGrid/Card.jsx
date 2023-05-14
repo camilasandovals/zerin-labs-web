@@ -11,7 +11,7 @@ export default function MedicationCard({data}){
     const navigate = useNavigate();
     
     const handleDelete = async (id) => {
-        const response = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
+        const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
           method: "PATCH", // Use the PATCH method instead of DELETE
           headers: {
             "Content-Type": "application/json",
@@ -24,7 +24,7 @@ export default function MedicationCard({data}){
 
 
     // const handleDelete = async (id) => {
-    //     const response = await fetch(`http://54.234.48.173:3001/api/medications/${id}`, {
+    //     const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
     //         method: "DELETE",
     //     })
     //     const data = await response.json();
