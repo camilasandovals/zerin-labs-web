@@ -31,7 +31,7 @@ export default function SignUpForm() {
         const result = await createUserWithEmailAndPassword(auth, email, password)
         .catch(err => alert(err));
         console.log(result.user);
-        setUser(user)
+        setUser(result.user)
         fetch("http://54.234.48.173:3001/api/users", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
@@ -48,7 +48,6 @@ export default function SignUpForm() {
         navigate('/home')
     }
 
-    //THE FOLLORING CODE IS BEING USED TWICE
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider()
         try {
@@ -58,8 +57,8 @@ export default function SignUpForm() {
             console.log(email, uid)
             fetch("http://54.234.48.173:3001/api/users", {
             method:"POST",
-            headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({email}, {uid})
+            headers: {"Content-Type": "application/json"},   
+            body: JSON.stringify({email}, {uid})  // I AM NOT SENDING THE CORRECT UID
        })
             .then(resp => resp.json())
             navigate('/home')

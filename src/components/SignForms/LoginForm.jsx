@@ -36,7 +36,7 @@ export default function LoginForm() {
     }
 
     
-    //THE FOLLORING CODE IS BEING USED TWICE
+    
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider()
         
