@@ -31,7 +31,10 @@ export default function LoginForm() {
 
         try {
             const response = await signInWithEmailAndPassword(auth, email, password)
-            setUser(response.user);
+            const user = response.user;
+            const token = await user.getIdToken();
+            localStorage.setItem("token", token)
+            setUser(user);
             navigate("/home")
         }
         catch (error) {
@@ -45,8 +48,11 @@ export default function LoginForm() {
         const provider = new GoogleAuthProvider()
         
         try {
-            const result = await signInWithPopup(auth, provider)
-            setUser(result.user)
+            const response = await signInWithPopup(auth, provider)
+            const user = response.user;
+            const token = await user.getIdToken();
+            localStorage.setItem("token", token)
+            setUser(user);
             navigate('/home')
             console.log(user)
         } catch (error) {

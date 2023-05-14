@@ -11,13 +11,16 @@ import Motivation from "../components/Motivation";
 export default function Home(){
     const [medications, setMedications] = useContext(MedicationsContext)
     const [user, setUser] = useContext(UserContext)
-
     const navigate = useNavigate();
 
-    //check if is ok to use this like this
-    if(!user){
-        navigate("/login")
-    }
+    const token = localStorage.getItem("token") //get our JWT local Storage
+
+    useEffect(() => {
+        if(!token) {
+            navigate('/login')
+        }
+    }, [])
+
 
     useEffect(()=>{
         fetch("http://3.95.14.19:3001/api/medications")
