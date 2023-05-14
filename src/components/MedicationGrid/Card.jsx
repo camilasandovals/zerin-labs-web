@@ -3,7 +3,6 @@ import { MedicationsContext } from "../../App"
 import { Col, Modal } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
-import AddMed from '../AddMed/AddMedForm'
 import { CheckCircleFill } from "react-bootstrap-icons";
 
 export default function MedicationCard({data}){
@@ -46,11 +45,6 @@ export default function MedicationCard({data}){
             <CheckCircleFill size={60} color={"green"} variant="primary" 
             onClick={() => handleDelete(data._id)}
             >Taken!</CheckCircleFill>
-            <Modal show={showModal} onHide={() => setShowModal(false)}>
-                <Modal.Body>
-                <AddMed setMedications={setMedications} showModal={showModal} setShowModal={setShowModal}/>
-                </Modal.Body>
-            </Modal >
         </Card.Body>
         </Card>
     </Col>

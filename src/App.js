@@ -13,10 +13,12 @@ import './App.css';
 export const MedicationsContext = createContext(null)
 export const SelectedMedicationContext = createContext(null)
 export const UserContext = createContext(null);
+
 function App() {
   const [medications, setMedications] = useState()
   const [selectedMedication, setSelectedMedication] = useState()
   const [user, setUser] = useState();
+  
 
   return (
     <div className="App">

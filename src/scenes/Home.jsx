@@ -1,16 +1,23 @@
 import { useContext, useEffect } from "react"
-import { MedicationsContext } from "../App"
+import { MedicationsContext, UserContext } from "../App"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import Grid from "../components/MedicationGrid/Grid"
 import { useNavigate } from "react-router-dom"
-import Modal from "../components/AddMed/AddModal";
+import Modal from "../components/AddModal";
 import User from "../components/User";
 import Motivation from "../components/Motivation";
 
 
 export default function Home(){
     const [medications, setMedications] = useContext(MedicationsContext)
+    const [user, setUser] = useContext(UserContext)
+
     const navigate = useNavigate();
+
+    //check if is ok to use this like this
+    if(!user){
+        navigate("/login")
+    }
 
     useEffect(()=>{
         fetch("http://54.234.48.173:3001/api/medications")
@@ -21,10 +28,12 @@ export default function Home(){
     },[])
   
     return(
+        
         <Container>
             <Row>
                 <Col md = {3}>
-                    <User />
+                    Welcome {user.displayName? user.displayName : 'User'}
+                    <User />    
                 </Col>
                 <Col>
                     <Row>
