@@ -32,7 +32,7 @@ export default function Home(){
         <Container>
             <Row>
                 <Col md = {3}>
-                    Welcome {user.displayName? user.displayName : 'User'}
+                    {/* Welcome {user.displayName? user.displayName : 'User'} */}
                     <User />    
                 </Col>
                 <Col>

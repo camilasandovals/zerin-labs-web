@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app"
-import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup} from "firebase/auth"
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword} from "firebase/auth"
 import { Form, Button, Container } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import { UserContext } from "../../App"
@@ -28,33 +28,46 @@ export default function SignUpForm() {
         if (e && e.preventDefault) {
             e.preventDefault();
         }
-        fetch("http://3.95.14.19:3001/api/users", {
-            method:"POST",
-            headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({email, password})
-       })
-           .then(resp => resp.json())
-           .then( data => {
-               if(data.message) {
-                   alert(data.message)
-                   return
-               }
-               setUser(data)
-               console.log(user);
-               navigate('/home')
-               createUserWithEmailAndPassword(auth, email, password)
-               
-           } ).catch(err => alert(err));
-              
-    }
+        try {
+            const response = await fetch("http://3.95.14.19:3001/api/users", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ email, password }),
+            });
+        
+            const data = await response.json();
+        
+            if (data.message) {
+              alert(data.message);
+              return;
+            }
+        
+            setUser(data);
+        
+            await createUserWithEmailAndPassword(auth, email, password);
+            const result = await signInWithEmailAndPassword(auth, email, password)
+            const user = result.user;
+            const token = await user.getIdToken();
+            localStorage.setItem("token", token)
+            console.log(token)
+            navigate("/home");
+          } catch (err) {
+            alert(err);
+          }
+        };
 
     const signInWithGoogle = async () => {
         const provider = new GoogleAuthProvider()
         try {
-            const result = await signInWithPopup(auth, provider)
-            setUser(result.user)
+            const response = await signInWithPopup(auth, provider)
             const { email, uid } = auth.currentUser
             console.log(email, uid)
+            const user = response.user;
+            setUser(user)
+            const token = await user.getIdToken();
+            localStorage.setItem("token", token)
             fetch("http://3.95.14.19:3001/api/users", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   
