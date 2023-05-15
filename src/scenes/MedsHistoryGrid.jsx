@@ -15,9 +15,10 @@ export default function MedsHistoryGrid(){
     },[])
 
     return(
+        <>
         <Container>
             <Row>
-                {
+                {medications.endDate == //..........
                     medications?.map(
                         (data) => (
                             data
@@ -28,5 +29,20 @@ export default function MedsHistoryGrid(){
                 }
             </Row>
         </Container>
+
+        <Container>
+        <Row>
+            {
+                medications?.map(
+                    (data) => (
+                        data
+                        ? <HistoryCard key={data._id} data={data}/>
+                        : <p> </p>
+                    )
+                )
+            }
+        </Row>
+        </Container>
+        </>
     )
 }

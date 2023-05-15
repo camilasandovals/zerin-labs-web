@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import {  Button, Modal, Container, Form  } from "react-bootstrap"
-import { MedicationsContext } from "../App"
+import { MedicationsContext, UserContext } from "../App"
 import { PlusCircleFill } from "react-bootstrap-icons"
 import Select from "react-select";
 import options from "../converter/drugsconverted.json"
@@ -8,6 +8,7 @@ import options from "../converter/drugsconverted.json"
 export default function AddModal() {
     const [showModal, setShowModal] = useState(false);
     const [medications, setMedications] = useContext(MedicationsContext)
+    const [user, setUser] = useContext(UserContext)
     const [nameMed, setName ] = useState('');
     const [dosage, setDosage] = useState('');
     const [quantity, setQuantity] = useState('');
@@ -31,10 +32,12 @@ export default function AddModal() {
 
     const handleAddMed = (e) => {
         e.preventDefault()
+        const uid = user.email
+        console.log(uid)
         fetch("http://3.95.14.19:3001/api/medications", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, medImg, notes, show:true})
+            body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, medImg, notes, show:true, uid})
        })
            .then(resp => resp.json())
            .then( data => {
