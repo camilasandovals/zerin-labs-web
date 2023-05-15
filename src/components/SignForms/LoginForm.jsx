@@ -33,6 +33,7 @@ export default function LoginForm() {
             const response = await signInWithEmailAndPassword(auth, email, password)
             const user = response.user;
             const token = await user.getIdToken();
+            console.log(token)
             localStorage.setItem("token", token)
             setUser(user);
             navigate("/home")
@@ -52,6 +53,7 @@ export default function LoginForm() {
             const user = response.user;
             const token = await user.getIdToken();
             localStorage.setItem("token", token)
+            console.log(token)
             setUser(user);
             navigate('/home')
             console.log(user)

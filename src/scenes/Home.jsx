@@ -14,22 +14,19 @@ export default function Home(){
     const navigate = useNavigate();
 
     const token = localStorage.getItem("token") //get our JWT local Storage
-
+    console.log(token)
     useEffect(() => {
-        if(!token) {
-            navigate('/login')
-        }
-    }, [])
-
-
-    useEffect(()=>{
         fetch("http://3.95.14.19:3001/api/medications")
         .then(resp => resp.json())
         .then(setMedications)
         .catch(alert)
-        
+
     },[])
   
+    if(!token) {
+        navigate('/login')
+    }
+
     return(
         
         <Container>
@@ -49,7 +46,11 @@ export default function Home(){
                         <Modal />
                     </Row>
                     <Row>
-                        <Button onClick={() => navigate('/login')}>Logout</Button> 
+                        <Button onClick={
+                            () => {
+                                navigate('/login');
+                                localStorage.removeItem('token');}
+                            }>Logout</Button> 
                     </Row>
                 </Col>
             </Row>
