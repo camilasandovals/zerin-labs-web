@@ -16,12 +16,14 @@ export default function AddModal() {
     const [frequency, setFrequency] = useState('');
     const [medImg, setMedImg] = useState("")
     const [notes, setNotes] = useState("")
+    const [endDate, setEndDate] = useState("")
+    const [doctor, setDoctor] = useState("")
     
     const image ="/images/MED1.png"
     const image2 ="/images/MED2.png"
 
     const units =  
-    [ 
+    [
         { value: "mcg", label: "mcg" },
         { value: "mg", label: "mg" },
         { value: "g", label: "g" },
@@ -33,11 +35,12 @@ export default function AddModal() {
     const handleAddMed = (e) => {
         e.preventDefault()
         const uid = user.email
-        console.log(uid)
+        console.log(endDate)
         fetch("http://3.95.14.19:3001/api/medications", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, medImg, notes, show:true, uid})
+            body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, 
+                medImg, notes, show:true, uid, doctor, endDate})
        })
            .then(resp => resp.json())
            .then( data => {
@@ -86,7 +89,7 @@ export default function AddModal() {
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label>Frequency</Form.Label>
-                        <Form.Control type="text" value={frequency} required={true} placeholder="Ex: Twice per day" onChange={(e) => {setFrequency(e.target.value)}}/>
+                        <Form.Control type="text" value={frequency} required={true} placeholder="Ex: Three times daily" onChange={(e) => {setFrequency(e.target.value)}}/>
                     </Form.Group>
                     {/* Radio starts*/}
                     <div>
@@ -116,8 +119,18 @@ export default function AddModal() {
                         </div>
                     {/* Radio ends */}
                     <Form.Group className="mb-3" >
+                        <Form.Label>Prescribed by:</Form.Label>
+                        <Form.Control type="text" value={doctor} placeholder="Ex: Dr. Smith" 
+                        onChange={(e) => {setDoctor(e.target.value)}}/>
+                    </Form.Group>
+                    <Form.Group className="mb-3" >
+                        <Form.Label>End Date</Form.Label>
+                        <Form.Control type="date" value={endDate}
+                        onChange={(e) => {setEndDate(e.target.value)}}/>
+                    </Form.Group>
+                    <Form.Group className="mb-3" >
                         <Form.Label>Notes</Form.Label>
-                        <Form.Control type="text" value={notes}  
+                        <Form.Control type="text" value={notes} placeholder="Ex: Take at night, with a meal" 
                         onChange={(e) => {setNotes(e.target.value)}}/>
                     </Form.Group>
 
