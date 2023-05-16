@@ -4,7 +4,7 @@ import { Button, Col, Container, Row } from "react-bootstrap"
 import Grid from "../components/MedicationGrid/Grid"
 import { useNavigate } from "react-router-dom"
 import Modal from "../components/AddModal";
-import User from "../components/User";
+import User from "../components/UserInfo";
 import Motivation from "../components/Motivation";
 
 
@@ -33,7 +33,6 @@ export default function Home(){
         <Container>
             <Row>
                 <Col md = {3}>
-                    Welcome {user && user.displayName? user.displayName : 'User'}
                     <User />    
                 </Col>
                 <Col>
@@ -53,6 +52,11 @@ export default function Home(){
                                 localStorage.removeItem('token');}
                             }>Logout</Button> 
                     </Row>
+                        <Button onClick={
+                            () => {
+                                navigate('/medications')
+                            }
+                        }>Medication History</Button>
                 </Col>
             </Row>
         </Container>
