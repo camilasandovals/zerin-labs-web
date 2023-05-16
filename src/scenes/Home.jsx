@@ -14,15 +14,15 @@ export default function Home(){
     const navigate = useNavigate();
 
     const token = localStorage.getItem("token") //get our JWT local Storage
-    console.log(token)
 
     useEffect(() => {
-        fetch(`http://3.95.14.19:3001/api/medications/${user.email}`)
-        .then(resp => resp.json())
-        .then(setMedications)
-        .catch(alert)
-
-    },[])
+        if (user) {  
+          fetch(`http://3.95.14.19:3001/api/medications/?uid=${user.email}`)
+            .then((resp) => resp.json())
+            .then(setMedications)
+            .catch(alert);
+        }
+      }, [user]);
   
     if(!token) {
         navigate('/login')
@@ -33,7 +33,7 @@ export default function Home(){
         <Container>
             <Row>
                 <Col md = {3}>
-                    Welcome {user && user.displayName? user.email : 'User'}
+                    Welcome {user && user.displayName? user.displayName : 'User'}
                     <User />    
                 </Col>
                 <Col>
@@ -56,5 +56,5 @@ export default function Home(){
                 </Col>
             </Row>
         </Container>
-    )
+    ) 
 }

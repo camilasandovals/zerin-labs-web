@@ -31,6 +31,12 @@ export default function MedDetails() {
                             <p>{selectedMedication.dosage}{selectedMedication.unit}</p>
                             <p>{selectedMedication.quantity}</p>
                             <p>{selectedMedication.frequency}</p>
+                            <p>Date added: {selectedMedication.createdAt}</p>
+                            <p>End Date: {selectedMedication.endDate}</p>
+                            <p>Prescribed by: {selectedMedication.doctor}</p>
+                            <p>Reactions: {selectedMedication.reactions}</p>
+                            <p>Taken weekly or daily: {selectedMedication.takingPerDayOrWeek}</p>
+                            <p>Total taken: {selectedMedication.totalTaken}</p>
                             {selectedMedication.notes}
                         </Col>
                     </Row>

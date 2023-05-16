@@ -71,7 +71,7 @@ export default function SignUpForm() {
             fetch("http://3.95.14.19:3001/api/users", {
             method:"POST",
             headers: {"Content-Type": "application/json"},   
-            body: JSON.stringify({email}, {uid})  // I AM NOT SENDING THE CORRECT UID
+            body: JSON.stringify({email, uid})  // I AM NOT SENDING THE CORRECT UID
        })
             .then(resp => resp.json())
             navigate('/home')

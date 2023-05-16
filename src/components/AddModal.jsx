@@ -52,7 +52,6 @@ export default function AddModal() {
                setShowModal(false)
            })
         .catch(alert) 
-       
     }
 
 

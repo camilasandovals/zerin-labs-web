@@ -10,7 +10,7 @@ export default function MedicationCard({data}){
     const [showModal, setShowModal] = useState(false);
     const navigate = useNavigate();
     
-    const handleDelete = async (id) => {
+    const handleTaken = async (id) => {
         const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
           method: "PATCH", // Use the PATCH method instead of DELETE
           headers: {
@@ -43,7 +43,7 @@ export default function MedicationCard({data}){
             <Card.Text>{data.frequency}</Card.Text>
             
             <CheckCircleFill size={60} color={"green"} variant="primary" 
-            onClick={() => handleDelete(data._id)}
+            onClick={() => handleTaken(data._id)}
             >Taken!</CheckCircleFill>
         </Card.Body>
         </Card>
