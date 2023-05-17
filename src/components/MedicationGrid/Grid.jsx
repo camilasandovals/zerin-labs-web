@@ -14,7 +14,7 @@ export default function Grid(){
                         (data) => (
                             data.show
                             ? <MedicationCard key={data._id} data={data}/>
-                            : <p> </p>
+                            : <span></span>
                         )
                     )
                 }

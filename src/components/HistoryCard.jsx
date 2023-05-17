@@ -1,11 +1,12 @@
 import { useState, useContext } from "react";
-import { MedicationsContext } from "../App"
+import { MedicationsContext, UserContext } from "../App"
 import { Col } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
 
 export default function HistoryCard({data}){
     const [medications, setMedications] = useContext(MedicationsContext)
+    const [user, setUser] = useContext(UserContext)
     const navigate = useNavigate();
     
     const handleDelete = async (id) => {

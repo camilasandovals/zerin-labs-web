@@ -11,16 +11,19 @@ export default function MedicationCard({data}){
     const navigate = useNavigate();
     
     const handleDelete = async (id) => {
-        const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
-          method: "PATCH", // Use the PATCH method instead of DELETE
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ show: false }), // Set the deleted flag to true
-        });
-        const data = await response.json();
-        setMedications(data);
-      };
+      const currentDate = new Date().toISOString().split("T")[0];
+      console.log(currentDate)
+      const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ endDate: currentDate }),
+        
+      });
+      const data = await response.json();
+      setMedications(data);
+    };
 
 
     // const handleDelete = async (id) => {

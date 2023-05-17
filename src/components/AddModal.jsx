@@ -36,7 +36,7 @@ export default function AddModal() {
         e.preventDefault()
         const uid = user.email
         console.log(endDate)
-        fetch("http://3.95.14.19:3001/api/medications", {
+        fetch(`http://3.95.14.19:3001/api/medications/?uid=${user.email}`, {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
             body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, 
@@ -62,10 +62,11 @@ export default function AddModal() {
   return (
     <>
     <PlusCircleFill size={60} color={"violet"} onClick={() => setShowModal(true)} />
-    <Modal show={showModal} onHide={() => setShowModal(false)}>
+    <Modal show={showModal} onHide={() => setShowModal(false) } >
+    
         <Modal.Body>
             <Container>
-                <h2 className="mb-4 mt-4">Add medication</h2>
+                {/* <h2 className="mb-4 mt-4">Add medication</h2> */}
                     <Form onSubmit={handleAddMed}> 
                     <Form.Group className="mb-3">
                         <Form.Label>Medication Name</Form.Label>
