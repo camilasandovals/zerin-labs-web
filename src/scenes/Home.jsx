@@ -13,8 +13,6 @@ export default function Home(){
     const [user, setUser] = useContext(UserContext)
     const navigate = useNavigate();
 
-    const token = localStorage.getItem("token") //get our JWT local Storage
-
     useEffect(() => {
         if (user) {  
           fetch(`http://3.95.14.19:3001/api/medications/?uid=${user.email}`)
@@ -24,7 +22,7 @@ export default function Home(){
         }
       }, [user]);
   
-    if(!token) {
+    if(!user) {
         navigate('/login')
     }
 
@@ -45,18 +43,6 @@ export default function Home(){
                     <Row>
                         <Modal />
                     </Row>
-                    <Row>
-                        <Button onClick={
-                            () => {
-                                navigate('/login');
-                                localStorage.removeItem('token');}
-                            }>Logout</Button> 
-                    </Row>
-                        <Button onClick={
-                            () => {
-                                navigate('/medications')
-                            }
-                        }>Medication History</Button>
                 </Col>
             </Row>
         </Container>

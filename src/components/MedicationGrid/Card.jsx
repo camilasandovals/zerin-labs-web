@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { MedicationsContext } from "../../App"
+import { MedicationsContext, UserContext } from "../../App"
 import { Col, Modal } from 'react-bootstrap';
 import { useNavigate } from "react-router-dom"
 import Card from 'react-bootstrap/Card';
@@ -8,17 +8,20 @@ import { CheckCircleFill } from "react-bootstrap-icons";
 export default function MedicationCard({data}){
     const [medications, setMedications] = useContext(MedicationsContext)
     const [showModal, setShowModal] = useState(false);
+    const [user, setUser] = useContext(UserContext)
+
     const navigate = useNavigate();
     
     const handleDelete = async (id) => {
-      const currentDate = new Date().toISOString().split("T")[0];
-      console.log(currentDate)
-      const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
+      // const currentDate = new Date().toISOString().split("T")[0];
+      // console.log(currentDate)
+      // `http://3.95.14.19:3001/api/medications/${id}`
+      const response = await fetch(`http://3.95.14.19:3001/api/medications/${id}?uid=${user.email}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ endDate: currentDate }),
+        body: JSON.stringify({ show:false }),
         
       });
       const data = await response.json();

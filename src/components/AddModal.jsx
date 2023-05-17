@@ -66,7 +66,7 @@ export default function AddModal() {
     
         <Modal.Body>
             <Container>
-                {/* <h2 className="mb-4 mt-4">Add medication</h2> */}
+                <h2 className="mb-4 mt-4">Add medication</h2>
                     <Form onSubmit={handleAddMed}> 
                     <Form.Group className="mb-3">
                         <Form.Label>Medication Name</Form.Label>

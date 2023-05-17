@@ -36,11 +36,13 @@ function App() {
   const [user, setUser] = useState();
 
   useEffect(() => {
-    auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
-      console.log("Showing user");
-      console.log(currentUser);
-    });
+    const oldUser = localStorage.getItem("user");
+    if (oldUser) {
+      const parsedUser = JSON.parse(oldUser);
+      setUser(parsedUser);
+      console.log("HERE IS THE USER")
+      console.log(user)
+    }
   }, []);
 
   return (

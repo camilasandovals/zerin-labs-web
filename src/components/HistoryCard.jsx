@@ -27,10 +27,10 @@ export default function HistoryCard({data}){
         <Card.Img variant="top" src={data.medImg} onClick={() => navigate(`/medications/${data._id}`) }/> 
         <Card.Body>
             <Card.Title>{data.nameMed}</Card.Title>
-            <Card.Text>{data.quantity}</Card.Text>
-            <Card.Text>{data.dosage} {data.unit}</Card.Text>
-            <Card.Text>{data.frequency}</Card.Text>
-            <Card.Text>{data.notes}</Card.Text>
+            <Card.Text>Quantity taking per day: {data.quantity}</Card.Text>
+            <Card.Text>Dosage: {data.dosage} {data.unit}</Card.Text>
+            <Card.Text>Frequency: {data.frequency}</Card.Text>
+            <Card.Text>Notes: {data.notes}</Card.Text>
         </Card.Body>
         </Card>
     </Col>
