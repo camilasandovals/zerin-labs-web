@@ -1,0 +1,36 @@
+@font-face {
+	font-family: Alte Haas Grotesk Regular;
+	src: url("../public/assets/AlteHaasGroteskRegular.ttf")
+}
+@font-face {
+	font-family: Alte Haas Grotesk Bold;
+	src: url("../public/assets/AlteHaasGroteskBold.ttf")
+}
+
+body {
+	font-family: "Alte Haas Grotesk Regular"
+}
+.App {
+    text-align: center;
+  }
+
+h1 {
+    font-size: clamp(25px, 4vw, 30px);
+}
+h2 {
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 900;
+}
+
+h3 {
+    font-size: clamp(16px, 2vw, 16px);
+    font-weight: 700;
+}
+
+p{
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+//Card
+
+

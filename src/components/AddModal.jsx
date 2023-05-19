@@ -34,13 +34,13 @@ export default function AddModal() {
 
     const handleAddMed = (e) => {
         e.preventDefault()
-        const uid = user.email
+        const email = user.email
         console.log(endDate)
-        fetch(`http://3.95.14.19:3001/api/medications/?uid=${user.email}`, {
+        fetch(`http://3.95.14.19:3001/api/medications/?email=${user.email}`, {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
             body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, 
-                medImg, notes, show:true, uid, doctor, endDate})
+                medImg, notes, show:true, email, doctor, endDate})
        })
            .then(resp => resp.json())
            .then( data => {
@@ -75,8 +75,8 @@ export default function AddModal() {
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label>Dosage</Form.Label>
-                        <Form.Control type="text" value={dosage} required={true} 
-                        placeholder="Ex: 200" onChange={(e) => {setDosage(e.target.value)}}/>
+                        <Form.Control type="Number" value={dosage} required={true} 
+                         onChange={(e) => {setDosage(e.target.value)}}/>
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label>Unit</Form.Label>

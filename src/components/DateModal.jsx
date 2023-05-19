@@ -7,16 +7,8 @@ export default function DateModal({id}) {
     const [showModal, setShowModal] = useState(false);
     const [medications, setMedications] = useContext(MedicationsContext)
     const [user, setUser] = useContext(UserContext)
-    const [nameMed, setName ] = useState('');
-    const [dosage, setDosage] = useState('');
-    const [quantity, setQuantity] = useState('');
-    const [unit, setUnit] = useState('');
-    const [frequency, setFrequency] = useState('');
-    const [medImg, setMedImg] = useState("")
-    const [notes, setNotes] = useState("")
     const [endDate, setEndDate] = useState("")
-    const [doctor, setDoctor] = useState("")
-    const [reactions, setReactions] = useState("")
+
 
     const image ="/images/MED1.png"
     const image2 ="/images/MED2.png"
@@ -24,7 +16,6 @@ export default function DateModal({id}) {
 
     const handleEditMed = (e) => {
         e.preventDefault()
-        const uid = user.email
         console.log(endDate)
         fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
             method:"PATCH",
@@ -43,10 +34,6 @@ export default function DateModal({id}) {
         .catch(alert) 
     }
 
-
-    const handleImageChange = (event) => {
-        setMedImg(event.target.value);
-      };
 
   return (
     <>

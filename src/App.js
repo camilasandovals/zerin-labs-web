@@ -8,10 +8,11 @@ import Login from "./scenes/Login";
 import Landing from "./scenes/Landing";
 import MedDetails from "./scenes/MedDetails";
 import MedsHistoryGrid from "./scenes/MedsHistoryGrid";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import User from "./scenes/User";
 import { Navbar } from "react-bootstrap";
 import MenuBar from "./components/MenuBar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.scss";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCaj2yp6o3IUmnuEqtrrYjwitTElPe6AMY",
@@ -38,8 +39,7 @@ function App() {
   useEffect(() => {
     const oldUser = localStorage.getItem("user");
     if (oldUser) {
-      const parsedUser = JSON.parse(oldUser);
-      setUser(parsedUser);
+      setUser(JSON.parse(oldUser));
       console.log("HERE IS THE USER")
       console.log(user)
     }
@@ -61,6 +61,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/medications/:id" element={<MedDetails />} />
                 <Route path="/medications/" element={<MedsHistoryGrid />} />
+                <Route path="/user/" element={<User />} />
               </Routes>
             </BrowserRouter>
           </SelectedMedicationContext.Provider>

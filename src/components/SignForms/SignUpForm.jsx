@@ -31,6 +31,7 @@ export default function SignUpForm() {
             }
         
             setUser(data);
+            console.log(data)
             localStorage.setItem("user", JSON.stringify(data))
             navigate('/home')
             

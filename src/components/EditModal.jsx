@@ -35,7 +35,7 @@ export default function EditModal({ variable, value }) {
 
   return (
     <>
-    <PencilSquare size={30} color={"purple"} onClick={() => setShowModal(true)}></PencilSquare>
+    <PencilSquare size={20} color={"purple"} onClick={() => setShowModal(true)}></PencilSquare>
     <Modal show={showModal} onHide={() => setShowModal(false) } >
     
         <Modal.Body>
