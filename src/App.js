@@ -10,7 +10,7 @@ import MedDetails from "./scenes/MedDetails";
 import MedsHistoryGrid from "./scenes/MedsHistoryGrid";
 import User from "./scenes/User";
 import { Navbar } from "react-bootstrap";
-import MenuBar from "./components/MenuBar";
+import MenuBar from "./components/Header/MenuBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";
 

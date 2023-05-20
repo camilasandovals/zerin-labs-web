@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import {  Button, Modal, Container, Form  } from "react-bootstrap"
-import { UserContext } from "../App"
+import { UserContext } from "../../App"
 import { PencilSquare } from "react-bootstrap-icons"
 import Select from "react-select";
 

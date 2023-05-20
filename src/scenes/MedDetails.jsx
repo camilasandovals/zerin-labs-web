@@ -2,8 +2,8 @@ import { useParams } from 'react-router-dom';
 import { Container, Row, Col, Button } from "react-bootstrap";
 import { useContext, useEffect } from "react";
 import { SelectedMedicationContext } from "../App"
-import EditModal from '../components/EditModal';
-import DateModal from '../components/DateModal';
+import EditModal from '../components/Modal/EditModal';
+import DateModal from '../components/Modal/DateModal';
 
 
 export default function MedDetails() {

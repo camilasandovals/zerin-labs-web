@@ -1,9 +1,9 @@
 import { useState, useContext } from "react";
 import {  Button, Modal, Container, Form  } from "react-bootstrap"
-import { MedicationsContext, UserContext } from "../App"
+import { MedicationsContext, UserContext } from "../../App"
 import { PlusCircleFill } from "react-bootstrap-icons"
 import Select from "react-select";
-import options from "../converter/drugsconverted.json"
+import options from "../../converter/drugsconverted.json"
 
 export default function AddModal() {
     const [showModal, setShowModal] = useState(false);

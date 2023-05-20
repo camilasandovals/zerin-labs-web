@@ -1,8 +1,8 @@
 import { Col, Container, Row, Button, Image } from "react-bootstrap";
-import { UserContext } from "../App";
+import { UserContext } from "../../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
-import UserModal from "./UserModal";
+import UserModal from "../Modal/UserModal";
 
 export default function UserInfo() {
     const [user, setUser] = useContext(UserContext)

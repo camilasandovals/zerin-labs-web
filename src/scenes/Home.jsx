@@ -3,9 +3,9 @@ import { MedicationsContext, UserContext } from "../App"
 import { Button, Col, Container, Row } from "react-bootstrap"
 import Grid from "../components/MedicationGrid/Grid"
 import { useNavigate } from "react-router-dom"
-import Modal from "../components/AddModal";
-import User from "../components/UserInfo";
-import Motivation from "../components/Motivation";
+import Modal from "../components/Modal/AddModal";
+import User from "../components/UserHomeInfo/UserInfo";
+import Motivation from "../components/Header/Motivation";
 
 
 export default function Home(){

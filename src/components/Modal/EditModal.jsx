@@ -1,26 +1,24 @@
 import { useState, useContext } from "react";
-import {  Button, Modal, Container, Form  } from "react-bootstrap"
-import { MedicationsContext, UserContext } from "../App"
-import { CalendarDate } from 'react-bootstrap-icons';
+import { useParams } from 'react-router-dom';
+import {  Modal, Container, Form  } from "react-bootstrap"
+import { MedicationsContext, UserContext, SelectedMedicationContext } from "../../App"
+import { PencilSquare } from 'react-bootstrap-icons';
 
-export default function DateModal({id}) {
+export default function EditModal({ variable, value }) {
+    const { id } = useParams();
     const [showModal, setShowModal] = useState(false);
     const [medications, setMedications] = useContext(MedicationsContext)
     const [user, setUser] = useContext(UserContext)
-    const [endDate, setEndDate] = useState("")
-
-
-    const image ="/images/MED1.png"
-    const image2 ="/images/MED2.png"
-
+    const [selectedMedication, setSelectedMedication] = useContext(SelectedMedicationContext)
+    
 
     const handleEditMed = (e) => {
         e.preventDefault()
-        console.log(endDate)
+        
         fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
             method:"PATCH",
             headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({ endDate })
+            body: JSON.stringify({ variable} )
        })
            .then(resp => resp.json())
            .then( data => {
@@ -37,20 +35,19 @@ export default function DateModal({id}) {
 
   return (
     <>
-    <CalendarDate size={30} color={"purple"} onClick={() => setShowModal(true)}></CalendarDate>
+    <PencilSquare size={20} color={"purple"} onClick={() => setShowModal(true)}></PencilSquare>
     <Modal show={showModal} onHide={() => setShowModal(false) } >
     
         <Modal.Body>
             <Container>
-                {/* <h2 className="mb-4 mt-4">Add medication</h2> */}
                     <Form onSubmit={handleEditMed}> 
                     <Form.Group className="mb-3" >
-                        <Form.Label>End Date</Form.Label>
-                        <Form.Control type="date" value={endDate}  
-                        onChange={(e) => {setEndDate(e.target.value)}}/>
+                        <Form.Label>{variable}</Form.Label>
+                        <Form.Control type="text" value={value}  
+                        onChange={(e) => {setSelectedMedication({...selectedMedication, [variable]: e.target.value })}}/>
                     </Form.Group>
 
-                    <Button variant="primary" type="submit">Save</Button>
+                    
                     </Form>
             </Container> 
         </Modal.Body>
