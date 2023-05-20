@@ -1,0 +1,11 @@
+
+
+.section-user-home h2 {
+    padding:1.5em;
+  }
+
+.image-user-home {
+    border-radius: 50%;
+    height: 230px;
+    width: 230px;
+}

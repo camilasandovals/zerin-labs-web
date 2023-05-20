@@ -3,29 +3,28 @@ import { UserContext } from "../../App";
 import { useContext } from "react";
 import { useNavigate } from "react-router-dom"
 import UserModal from "../Modal/UserModal";
+import "./styles.css";
 
 export default function UserInfo() {
     const [user, setUser] = useContext(UserContext)
     const navigate = useNavigate()
 
     return(
-        <Container>
-            <Row>
-                <Col>
-                    <Row>
-                        <Image src={user?.img} className="fluid"/>
-                    </Row>
-                    <p>{user && user.fullname? user.fullname : 'User'}</p>
-                    <p>Points: {user?.points}</p>
-                    <Row>
+        <section className="section-user-home">
+                    <div>
+                    <h2>Welcome {user && user.fullname? user.fullname : 'User'}</h2>
+                    </div>
+                    <div>
+                        <img src={user?.img} className="image-user-home"/>
+                    </div>
+                    <h2>Points: {user?.points}</h2>
+                    <div>
                         <Button onClick={
                             () => {
                                 navigate('/login');
                                 localStorage.removeItem('user');}
                         }>Logout</Button> 
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+                    </div>
+        </section>
     )
 }

@@ -30,7 +30,7 @@ export default function Home(){
         
         <Container>
             <Row>
-                <Col md = {3}>
+                <Col md = {3} >
                     <User />    
                 </Col>
                 <Col>

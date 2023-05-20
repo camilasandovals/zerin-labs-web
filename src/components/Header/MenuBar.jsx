@@ -1,10 +1,11 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import "./styles.css";
 
 export default function MenuBar() {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar className='navbar'>
     <Container>
       <Navbar.Brand href="/">ZerinLabs</Navbar.Brand>
       <Nav className="me-auto">

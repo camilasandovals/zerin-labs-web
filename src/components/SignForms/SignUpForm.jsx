@@ -1,4 +1,4 @@
-import { Form, Button, Container } from "react-bootstrap"
+import { Form, Button, Container, Col, Row } from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
 import { UserContext } from "../../App"
 import { useContext, useState } from "react"
@@ -9,6 +9,8 @@ export default function SignUpForm() {
     const [user, setUser] = useContext(UserContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [isVisibleLogin, setIsVisibleLogin] = useState(false);
+    const [isVisibleSignUp, setIsVisibleSignUp] = useState(false);
 
     const handleAddUser = async(e) => {
         if (e && e.preventDefault) {
@@ -40,11 +42,17 @@ export default function SignUpForm() {
           }
         };
 
-
+       
+          
     return(
-        <Container>
+        <>
+            <button className="button-landing" variant="primary" type="submit" style={{ position: 'absolute', top: '70%', left: '60%', transform: 'translate(-50%, -50%)' }} onClick={() => setIsVisibleSignUp(true)}>Sign up</button>
+        <Row className="justify-content-center">
+        <Col md={3} style={{ position: 'absolute', top: '35%', transform: 'translate(0%, -50%)' }}>
+            {isVisibleSignUp &&
+            <>
             <h2>Sign Up</h2>
-            <p>Already an user? <span onClick={() => navigate('/login')}>Login!</span></p>
+            {/* <p>Already an user? <span onClick={() => navigate('/login')}>Login!</span></p> */}
             <Form onSubmit={handleAddUser}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Email address</Form.Label>
@@ -66,10 +74,14 @@ export default function SignUpForm() {
                 {/* <Form.Group className="mb-3">
                     <Form.Check type="checkbox" label="Keep me logged in" />
                 </Form.Group> */}
-                <Button variant="primary" type="submit">
+                <button type="submit" className="button-landing">
                     Sign up
-                </Button>
+                </button>
             </Form>
-        </Container>
+            </>
+        }
+        </Col>
+        </Row>
+        </>
     )
 }
