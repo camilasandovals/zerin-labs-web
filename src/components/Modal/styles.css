@@ -1,0 +1,15 @@
+.class-modal {
+    border-radius: 0px;
+  }
+
+.plus-sign{
+    width: 60px;
+    height: 60px;
+    color: #3333;
+    transition: 0.5s ease-in;
+    
+}
+
+.plus-sign:hover{
+    color: #ffab7b;
+}

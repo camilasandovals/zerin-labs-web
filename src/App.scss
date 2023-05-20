@@ -69,3 +69,45 @@ p{
     color: #776ef5;
     border: #847bff;
   }
+
+  //form
+  .sign-form{
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10%;
+    padding: 25px;
+  }
+  
+  .button-landing-form {
+    background-color:#847bff;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.693);
+    transition: 0.5s ease-in;
+  }
+  .button-landing-form:hover {
+    background-color: #ffab7b;;
+    color: white;
+  }
+  
+  //user
+.section-user{
+  background-image: url("../public/images/userbg.png");
+}
+
+.image-user {
+  border-radius: 50%;
+  height: 230px;
+  width: 230px;
+  margin: 50px;
+}
+
+
+
+ 

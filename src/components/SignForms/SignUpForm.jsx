@@ -48,9 +48,9 @@ export default function SignUpForm() {
         <>
             <button className="button-landing" variant="primary" type="submit" style={{ position: 'absolute', top: '70%', left: '60%', transform: 'translate(-50%, -50%)' }} onClick={() => setIsVisibleSignUp(true)}>Sign up</button>
         <Row className="justify-content-center">
-        <Col md={3} style={{ position: 'absolute', top: '35%', transform: 'translate(0%, -50%)' }}>
             {isVisibleSignUp &&
             <>
+             <Col sm= {1} md={3} style={{ position: 'absolute', top: '35%', transform: 'translate(0%, -50%)' }} className="sign-form">
             <h2>Sign Up</h2>
             {/* <p>Already an user? <span onClick={() => navigate('/login')}>Login!</span></p> */}
             <Form onSubmit={handleAddUser}>
@@ -74,13 +74,13 @@ export default function SignUpForm() {
                 {/* <Form.Group className="mb-3">
                     <Form.Check type="checkbox" label="Keep me logged in" />
                 </Form.Group> */}
-                <button type="submit" className="button-landing">
+                <button type="submit" className="button-landing-form">
                     Sign up
                 </button>
             </Form>
+            </Col>
             </>
         }
-        </Col>
         </Row>
         </>
     )

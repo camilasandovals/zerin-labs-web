@@ -25,14 +25,14 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: center no-repeat url("../../../public/images/sky.png");
+  background: center no-repeat url("https://milasnewbucket.s3.us-east-2.amazonaws.com/FONDO4.png");
 }
 
 .medication-card-image {
   position: absolute;
   z-index: 5;
   top: 10%;
-  left: 35%;
+  left: 40%;
   height: 35%;
   width: auto;
 }

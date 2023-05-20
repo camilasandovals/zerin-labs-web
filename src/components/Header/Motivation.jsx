@@ -1,7 +1,7 @@
 export default function Motivation() {
     return(
         <>
-            <h1>A motivational message here</h1>
+            <h1>Your health, a gift worth preserving for family.</h1>
         </>
     )
 }

@@ -28,7 +28,7 @@ export default function Landing(){
                 showZoomCtrl={false}
                 mouseZoom={false}
             />
-           {/* <span style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: "white"}}>{text}</span> */}
+           {/* <h1 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: "white"}}>Zerin Labs</h1> */}
             <SignUpForm />
             <LoginForm />
     

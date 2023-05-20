@@ -3,8 +3,7 @@ import { getAuth } from "firebase/auth";
 import { useState, createContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./scenes/Home";
-import SignUp from "./scenes/SignUp";
-import Login from "./scenes/Login";
+
 import Landing from "./scenes/Landing";
 import MedDetails from "./scenes/MedDetails";
 import MedsHistoryGrid from "./scenes/MedsHistoryGrid";
@@ -57,8 +56,6 @@ function App() {
               <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/home" element={<Home />} />
-                <Route path="/signup" element={<SignUp />} />
-                <Route path="/login" element={<Login />} />
                 <Route path="/medications/:id" element={<MedDetails />} />
                 <Route path="/medications/" element={<MedsHistoryGrid />} />
                 <Route path="/user/" element={<User />} />

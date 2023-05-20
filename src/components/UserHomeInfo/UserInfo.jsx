@@ -19,11 +19,11 @@ export default function UserInfo() {
                     </div>
                     <h2>Points: {user?.points}</h2>
                     <div>
-                        <Button onClick={
+                        <button className="button-landing"onClick={
                             () => {
-                                navigate('/login');
+                                navigate('/');
                                 localStorage.removeItem('user');}
-                        }>Logout</Button> 
+                        }>Logout</button> 
                     </div>
         </section>
     )

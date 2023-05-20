@@ -40,7 +40,7 @@ export default function HistoryCard({data}){
       <div className="card-wrapper">
         <img
           className="medication-card-image"
-          src="https://cdn.shopify.com/s/files/1/0582/3453/6088/files/product-pill-sunbeam.png?v=1635445293"
+          src={data.medImg}
           onClick={() => navigate(`/medications/${data._id}`)}
           alt="Overlay"
         />

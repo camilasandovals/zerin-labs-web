@@ -4,7 +4,9 @@ import Navbar from 'react-bootstrap/Navbar';
 import "./styles.css";
 
 export default function MenuBar() {
+  
   return (
+    <>
     <Navbar className='navbar'>
     <Container>
       <Navbar.Brand href="/">ZerinLabs</Navbar.Brand>
@@ -15,5 +17,6 @@ export default function MenuBar() {
       </Nav>
     </Container>
   </Navbar>
+  </>
   );
 }

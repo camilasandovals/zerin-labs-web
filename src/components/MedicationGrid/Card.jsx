@@ -56,32 +56,7 @@ export default function MedicationCard({ data }) {
           <button className="medication-card-done-button"  onClick={() => handleMedTaken(data._id)}><h2>Taken!</h2></button>
         </div>
       </div>
-      {/* <Card className="rounded-0" style={{ width: '17rem' }}>
-    <div className="card-img-container">
-      <img src="/images/bg1.jpg" alt="Background" width={270} height={170}/>
-      <img src="https://cdn.shopify.com/s/files/1/0582/3453/6088/files/product-pill-sunbeam.png?v=1635445293" onClick={() => navigate(`/medications/${data._id}` )}
-        style={{
-          position: 'absolute',
-          top:60,
-          left: 110,
-          width: '22%',
-          height: '100%',
-        }}
-        alt="Overlay"
-        
-      />
-    </div>
-    <Card.Body>
-            <h2>{data.nameMed}</h2>
-            <p>{data.quantity}</p>
-            <p>{data.dosage} {data.unit}</p>
-            <p>{data.frequency}</p>
-            
-            <CheckCircleFill size={60} color={"green"} variant="primary" 
-            onClick={() => handleMedTaken(data._id)}
-            >Taken!</CheckCircleFill>
-          </Card.Body>
-        </Card> */}
+      
     </Col>
   );
 }

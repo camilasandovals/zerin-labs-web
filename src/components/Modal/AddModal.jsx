@@ -4,6 +4,7 @@ import { MedicationsContext, UserContext } from "../../App"
 import { PlusCircleFill } from "react-bootstrap-icons"
 import Select from "react-select";
 import options from "../../converter/drugsconverted.json"
+import "./styles.css";
 
 export default function AddModal() {
     const [showModal, setShowModal] = useState(false);
@@ -62,8 +63,8 @@ export default function AddModal() {
 
   return (
     <>
-    <PlusCircleFill size={60} color={"violet"} onClick={() => setShowModal(true)} />
-    <Modal show={showModal} onHide={() => setShowModal(false) } >
+    <PlusCircleFill className="plus-sign" onClick={() => setShowModal(true)} />
+    <Modal show={showModal} onHide={() => setShowModal(false) } className="class-modal">
     
         <Modal.Body>
             <Container>

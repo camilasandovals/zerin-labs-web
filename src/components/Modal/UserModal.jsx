@@ -84,7 +84,7 @@ export default function UserModal() {
 
   return (
     <>
-    <PencilSquare size={30} color={"violet"} onClick={() => setShowModal(true)} />
+    <button className="button-landing-form" size={30} color={"violet"} onClick={() => setShowModal(true)}>Edit</button>
     <Modal show={showModal} onHide={() => setShowModal(false) } >
     
         <Modal.Body>
