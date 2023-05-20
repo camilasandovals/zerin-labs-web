@@ -1,7 +1,7 @@
 import { Container, Row } from "react-bootstrap"
 import { useContext, useEffect } from "react"
 import { MedicationsContext, UserContext } from "../App"
-import HistoryCard from "../components/HistoryCard"
+import HistoryCard from "../components/HistoryCard/HistoryCard"
 
 export default function MedsHistoryGrid(){
     const [medications, setMedications] = useContext(MedicationsContext)
@@ -31,9 +31,9 @@ export default function MedsHistoryGrid(){
                 }
             </Row>
         </Container> */}
-
-        <Container>
-        <Row>
+        <h1>Medication History</h1>
+        <section className="medication-grid-container">
+            
             {
                 medications?.map(
                     (data) => (
@@ -43,8 +43,7 @@ export default function MedsHistoryGrid(){
                     )
                 )
             }
-        </Row>
-        </Container>
+        </section>
         </>
     )
 }

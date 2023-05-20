@@ -22,7 +22,7 @@ export default function MedDetails() {
             <Container>
                 <Row> 
                     <Row>
-                        <Col >
+                        <Col>
                             <h1>{user?.fullname}</h1>
                             <img src={user?.img} height={100}/>
                             <p>Email: {user?.email}</p>

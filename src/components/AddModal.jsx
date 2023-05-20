@@ -19,8 +19,9 @@ export default function AddModal() {
     const [endDate, setEndDate] = useState("")
     const [doctor, setDoctor] = useState("")
     
-    const image ="/images/MED1.png"
-    const image2 ="/images/MED2.png"
+    const image ="https://cdn.shopify.com/s/files/1/0582/3453/6088/files/product-pill-golden-hour.png?v=1635445184"
+    const image2 ="https://cdn.shopify.com/s/files/1/0582/3453/6088/files/product-pill-moonlight.png?v=1635445265"
+    const image3 = "https://cdn.shopify.com/s/files/1/0582/3453/6088/files/product-pill-sunbeam.png?v=1635445293"
 
     const units =  
     [
@@ -115,6 +116,18 @@ export default function AddModal() {
                             onChange={handleImageChange}
                             />
                             <img src={image2}  width={50}/>
+                        </label>
+
+                        <label className="btn">
+                            <input
+                            type="radio"
+                            name="test"
+                            id="option3"
+                            value={image3}
+                            checked={medImg === image3}
+                            onChange={handleImageChange}
+                            />
+                            <img src={image3}  width={50}/>
                         </label>
                         </div>
                     {/* Radio ends */}

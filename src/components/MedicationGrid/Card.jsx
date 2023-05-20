@@ -24,15 +24,38 @@ export default function MedicationCard({ data }) {
         body: JSON.stringify({ show: false }),
       }
     );
-
+    // {medications:medications, user:thisUser}
     const data = await response.json();
-    setMedications(data);
+    setMedications(data.medications);
+    setUser(data.user)
   };
 
   const background = [];
+  // console.log("{data.medImg}", data.medImg);
   return (
     <Col className="d-flex justify-content-center ">
-      <div className="card-wrapper"></div>
+      <div className="card-wrapper">
+        <img
+          className="medication-card-image"
+          src={data.medImg}
+          onClick={() => navigate(`/medications/${data._id}`)}
+          alt="Overlay"
+        />
+
+        <div className="medication-card-content">
+          <h2>{data.nameMed}</h2>
+          <p>
+            <span>Qtty:</span> {data.quantity}
+          </p>
+          <p>
+            <span>Dosage:</span> {data.dosage} {data.unit}
+          </p>
+          <p>
+            <span>Frecuency:</span> {data.frequency}
+          </p>
+          <button className="medication-card-done-button"  onClick={() => handleMedTaken(data._id)}></button>
+        </div>
+      </div>
       {/* <Card className="rounded-0" style={{ width: '17rem' }}>
     <div className="card-img-container">
       <img src="/images/bg1.jpg" alt="Background" width={270} height={170}/>
