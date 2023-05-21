@@ -90,7 +90,7 @@ export default function UserModal() {
         <Modal.Body>
           <div className="form-modal">
                 <h2>Add your information</h2>
-                  <div className="form-modal" onSubmit={handleUpdateUser}> 
+                  <Form className="form-modal" onSubmit={handleUpdateUser}> 
                     <Form.Group className="mb-3" >
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" value={fullname}  
@@ -123,7 +123,7 @@ export default function UserModal() {
                     <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
                       <button className="button-landing-form" type="submit">Save</button>
                     </div>
-                    </div>
+                    </Form>
             </div> 
         </Modal.Body>
     </Modal >

@@ -43,7 +43,7 @@ export default function DateModal() {
             <div className="form-modal">
             
                 {/* <h2 className="mb-4 mt-4">Add medication</h2> */}
-                    <Form onSubmit={handleEditMed}> 
+                    <Form className="form-modal" onSubmit={handleEditMed}> 
                     <Form.Group className="mb-3" >
                         <Form.Label>End Date</Form.Label>
                         <Form.Control type="date" value={endDate}  

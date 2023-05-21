@@ -69,7 +69,7 @@ export default function AddModal() {
         <Modal.Body>
             <div className="form-modal">
                 <h2>Add medication</h2>
-                    <div className="form-modal" onSubmit={handleAddMed}> 
+                    <Form className="form-modal" onSubmit={handleAddMed}> 
                     <Form.Group className="mb-3">
                         <Form.Label>Medication Name</Form.Label>
                         <Select options={options} required={true}
@@ -150,7 +150,7 @@ export default function AddModal() {
                     <div className="button-modal">
                       <button className="button-landing-form" type="submit">Save</button>
                     </div>
-                    </div>
+                    </Form>
             </div> 
         </Modal.Body>
     </Modal >

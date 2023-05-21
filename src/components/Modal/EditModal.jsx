@@ -40,7 +40,7 @@ export default function EditModal({ variable, value }) {
     
         <Modal.Body>
             <div className="form-modal">
-                    <Form onSubmit={handleEditMed}> 
+                    <Form className="form-modal" onSubmit={handleEditMed}> 
                     <Form.Group className="mb-3" >
                     <Form.Label>{variable && variable.charAt(0).toUpperCase() + variable.slice(1)}</Form.Label>
                         <Form.Control type="text" value={value}  
