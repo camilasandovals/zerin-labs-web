@@ -125,6 +125,11 @@ p{
   border: 30px;
 }
 
+//medication home
+.medication-card-image:hover {
+  animation: rotateHover 1s ease-in-out alternate infinite;
+}
+
 
 //medication details
 .section-med-details{
@@ -136,3 +141,14 @@ p{
   height: 100%;
 }
 
+@keyframes rotateHover {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
