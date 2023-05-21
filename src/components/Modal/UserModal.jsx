@@ -85,22 +85,22 @@ export default function UserModal() {
   return (
     <>
     <button className="button-landing-form" size={30} color={"violet"} onClick={() => setShowModal(true)}>Edit</button>
-    <Modal show={showModal} onHide={() => setShowModal(false) } >
+    <Modal show={showModal} onHide={() => setShowModal(false) } className="class-modal">
     
         <Modal.Body>
-            <Container>
-                <h2 className="mb-4 mt-4">Add your information</h2>
-                    <Form onSubmit={handleUpdateUser}> 
+          <div className="form-modal">
+                <h2>Add your information</h2>
+                  <div className="form-modal" onSubmit={handleUpdateUser}> 
                     <Form.Group className="mb-3" >
                         <Form.Label>Name</Form.Label>
                         <Form.Control type="text" value={fullname}  
                         placeholder="Ex: David Smith" onChange={(e) => {setFullname(e.target.value)}}/>
-                    <Form.Group>
+                    </Form.Group>
+                    <Form.Group className="mb-3">
                         <Form.Label>Profile picture</Form.Label>
                         <Form.Control
                             type="file"
                             onChange={(e) => convertFile(e.target.files)}/>
-                    </Form.Group>
                     </Form.Group>
                     <Form.Group className="mb-3" >
                         <Form.Label>Age</Form.Label>
@@ -123,8 +123,8 @@ export default function UserModal() {
                     <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
                       <button className="button-landing-form" type="submit">Save</button>
                     </div>
-                    </Form>
-            </Container> 
+                    </div>
+            </div> 
         </Modal.Body>
     </Modal >
     </>
