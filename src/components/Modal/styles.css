@@ -12,10 +12,38 @@
 
 }
 
-  
-  .plus-sign:hover {
-    transform: translateY(-10px); 
-  }
+.plus-sign:hover {
+  transform: translateY(-10px); 
+}
 .plus-sign:hover{
     color: #ffab7b;
+}
+.modal-content {
+  border-radius: 0 !important;
+}
+
+.form-modal h2 {
+  text-align: center;
+  border-color: #ffab7b;
+  border-width: 30px;
+}
+.form-modal {
+  padding: 20px;
+}
+
+.class-modal{
+  backdrop-filter: blur(10px);
+  background-color: #34304348;
+  /* background-color: #ffab7b; */
+}
+
+.radio-med-img{
+  margin-right: 30px;
+  padding: 5px;
+  padding-bottom: 20px;
+}
+
+.button-modal{
+  display: flex;
+  justify-content: center;
 }

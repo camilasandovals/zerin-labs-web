@@ -32,7 +32,7 @@ export default function MedDetails() {
                             {/* <img src={selectedMedication.medImg} height={150}/> */}
                             <p>Dosage: {selectedMedication.dosage}  <EditModal variable="dosage" value={selectedMedication.dosage}/> </p>
                             <p>Unit: {selectedMedication.unit}  <EditModal variable="unit" value={selectedMedication.unit}/> </p>
-                            <p>Quantity taking per day: {selectedMedication.quantity}  <EditModal variable="Quantity" value={selectedMedication.quantity} /> </p>
+                            <p>Quantity taking per day: {selectedMedication.quantity}  <EditModal variable="quantity" value={selectedMedication.quantity} /> </p>
                             <p>Frequency: {selectedMedication.frequency}   <EditModal variable="frequency" value={selectedMedication.frequency}/></p>
                             <p>Prescribed by: {selectedMedication.doctor} <EditModal variable="doctor" value={selectedMedication.doctor}/> </p>
                             <p>Reactions: {selectedMedication.reactions}  <EditModal variable="reactions" value={selectedMedication.reactions}/> </p>

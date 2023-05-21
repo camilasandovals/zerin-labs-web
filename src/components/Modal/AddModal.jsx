@@ -67,9 +67,9 @@ export default function AddModal() {
     <Modal show={showModal} onHide={() => setShowModal(false) } className="class-modal">
     
         <Modal.Body>
-            <Container>
-                <h2 className="mb-4 mt-4">Add medication</h2>
-                    <Form onSubmit={handleAddMed}> 
+            <div className="form-modal">
+                <h2>Add medication</h2>
+                    <div className="form-modal" onSubmit={handleAddMed}> 
                     <Form.Group className="mb-3">
                         <Form.Label>Medication Name</Form.Label>
                         <Select options={options} required={true}
@@ -94,8 +94,8 @@ export default function AddModal() {
                         <Form.Control type="text" value={frequency} required={true} placeholder="Ex: Three times daily" onChange={(e) => {setFrequency(e.target.value)}}/>
                     </Form.Group>
                     {/* Radio starts*/}
-                    <div>
-                        <label className="btn">
+                    <div >
+                        <label className="radio-med-img">
                             <input
                             type="radio"
                             name="test"
@@ -104,10 +104,10 @@ export default function AddModal() {
                             checked={medImg === image}
                             onChange={handleImageChange}
                             />
-                            <img src={image}  width={50}/>
+                            <img src={image}  width={30}/>
                         </label>
 
-                        <label className="btn">
+                        <label className="radio-med-img">
                             <input
                             type="radio"
                             name="test"
@@ -116,10 +116,10 @@ export default function AddModal() {
                             checked={medImg === image2}
                             onChange={handleImageChange}
                             />
-                            <img src={image2}  width={50}/>
+                            <img src={image2}  width={30}/>
                         </label>
 
-                        <label className="btn">
+                        <label className="radio-med-img">
                             <input
                             type="radio"
                             name="test"
@@ -128,7 +128,7 @@ export default function AddModal() {
                             checked={medImg === image3}
                             onChange={handleImageChange}
                             />
-                            <img src={image3}  width={50}/>
+                            <img src={image3}  width={30}/>
                         </label>
                         </div>
                     {/* Radio ends */}
@@ -147,10 +147,11 @@ export default function AddModal() {
                         <Form.Control type="text" value={notes} placeholder="Ex: Take at night, with a meal" 
                         onChange={(e) => {setNotes(e.target.value)}}/>
                     </Form.Group>
-
-                    <Button variant="primary" type="submit">Save</Button>
-                    </Form>
-            </Container> 
+                    <div className="button-modal">
+                      <button className="button-landing-form" type="submit">Save</button>
+                    </div>
+                    </div>
+            </div> 
         </Modal.Body>
     </Modal >
     </>

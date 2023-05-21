@@ -1,17 +1,16 @@
 import { useState, useContext } from "react";
 import {  Button, Modal, Container, Form  } from "react-bootstrap"
+import { useParams } from 'react-router-dom';
 import { MedicationsContext, UserContext } from "../../App"
 import { CalendarDate } from 'react-bootstrap-icons';
 
-export default function DateModal({id}) {
+export default function DateModal() {
+    const { id } = useParams();
     const [showModal, setShowModal] = useState(false);
     const [medications, setMedications] = useContext(MedicationsContext)
     const [user, setUser] = useContext(UserContext)
     const [endDate, setEndDate] = useState("")
 
-
-    const image ="/images/MED1.png"
-    const image2 ="/images/MED2.png"
 
 
     const handleEditMed = (e) => {
@@ -38,10 +37,11 @@ export default function DateModal({id}) {
   return (
     <>
     <CalendarDate size={30} color={"purple"} onClick={() => setShowModal(true)}></CalendarDate>
-    <Modal show={showModal} onHide={() => setShowModal(false) } >
+    <Modal show={showModal} onHide={() => setShowModal(false) } className="class-modal">
     
         <Modal.Body>
-            <Container>
+            <div className="form-modal">
+            
                 {/* <h2 className="mb-4 mt-4">Add medication</h2> */}
                     <Form onSubmit={handleEditMed}> 
                     <Form.Group className="mb-3" >
@@ -49,10 +49,11 @@ export default function DateModal({id}) {
                         <Form.Control type="date" value={endDate}  
                         onChange={(e) => {setEndDate(e.target.value)}}/>
                     </Form.Group>
-
-                    <Button variant="primary" type="submit">Save</Button>
+                    <div className="button-modal">
+                    <button className="button-landing-form" type="submit">Save</button>
+                    </div>
                     </Form>
-            </Container> 
+            </div> 
         </Modal.Body>
     </Modal >
     </>

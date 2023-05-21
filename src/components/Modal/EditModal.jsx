@@ -1,6 +1,6 @@
 import { useState, useContext } from "react";
 import { useParams } from 'react-router-dom';
-import {  Modal, Container, Form  } from "react-bootstrap"
+import {  Modal, Container, Form, Button  } from "react-bootstrap"
 import { MedicationsContext, UserContext, SelectedMedicationContext } from "../../App"
 import { PencilSquare } from 'react-bootstrap-icons';
 
@@ -36,20 +36,21 @@ export default function EditModal({ variable, value }) {
   return (
     <>
     <PencilSquare size={20} color={"purple"} onClick={() => setShowModal(true)}></PencilSquare>
-    <Modal show={showModal} onHide={() => setShowModal(false) } >
+    <Modal show={showModal} onHide={() => setShowModal(false) } className="class-modal">
     
         <Modal.Body>
-            <Container>
+            <div className="form-modal">
                     <Form onSubmit={handleEditMed}> 
                     <Form.Group className="mb-3" >
-                        <Form.Label>{variable}</Form.Label>
+                    <Form.Label>{variable && variable.charAt(0).toUpperCase() + variable.slice(1)}</Form.Label>
                         <Form.Control type="text" value={value}  
                         onChange={(e) => {setSelectedMedication({...selectedMedication, [variable]: e.target.value })}}/>
                     </Form.Group>
-
-                    
+                    <div className="button-modal">
+                        <button className="button-landing-form" type="submit">Save</button>
+                    </div>
                     </Form>
-            </Container> 
+            </div> 
         </Modal.Body>
     </Modal >
     </>

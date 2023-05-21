@@ -120,7 +120,9 @@ export default function UserModal() {
                         <Form.Label>Weight</Form.Label>
                         <Form.Control type="text" value={weight}  placeholder="Ex: 150 pounds" onChange={(e) => {setWeight(e.target.value)}}/>
                     </Form.Group>
-                    <Button variant="primary" type="submit">Save</Button>
+                    <div style={{ display: 'flex', justifyContent: 'center', textAlign: 'center' }}>
+                      <button className="button-landing-form" type="submit">Save</button>
+                    </div>
                     </Form>
             </Container> 
         </Modal.Body>
