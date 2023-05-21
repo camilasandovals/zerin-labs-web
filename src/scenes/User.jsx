@@ -28,6 +28,7 @@ export default function MedDetails() {
                             <p>Email: {user?.email}</p>
                             <p>Points: {user?.points}</p>
                             <p>Age: {user?.age}</p>
+                            <p>Gender: {user?.gender}</p>
                             <p>Height: {user?.height}</p>
                             <p>Weight: {user?.weight}</p>
                             <p>Created at: {(new Date(user?.createdAt)).toLocaleDateString('en-US')} </p>
