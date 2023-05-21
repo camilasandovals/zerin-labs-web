@@ -16,11 +16,12 @@ body {
   }
 
 h1 {
-    font-size: clamp(25px, 4vw, 30px);
+  font-size: clamp(25px, 4vw, 30px);
 }
+
 h2 {
-    font-size: clamp(20px, 2vw, 24px);
-    font-weight: 900;
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 900;
 }
 
 h3 {
@@ -92,22 +93,46 @@ p{
     transition: 0.5s ease-in;
   }
   .button-landing-form:hover {
-    background-color: #ffab7b;;
+    background-color: #ffab7b;
     color: white;
   }
   
   //user
+  
 .section-user{
   background-image: url("../public/images/userbg.png");
+  /*background-repeat: no-repeat;
+  background-size: cover; /* or background-size: contain; 
+  background-position: center; 
+  width: 100%;
+  height: 100%;*/
 }
 
 .image-user {
   border-radius: 50%;
   height: 230px;
   width: 230px;
-  margin: 50px;
+  margin-bottom: 15px;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.3);
+}
+
+.form-user{
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 0%;
+  padding: 25px;
+  margin: 25px;
+  box-shadow: 0px 0px 9px rgba(0, 0, 0, 0.2);
+  border: 30px;
 }
 
 
+//medication details
+.section-med-details{
+  background-image: url("../public/images/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center; 
+  width: 100%;
+  height: 100%;
+}
 
- 

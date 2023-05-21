@@ -37,11 +37,10 @@ export default function HistoryCard({data}){
     // </Col>
 
     <Col className="d-flex justify-content-center ">
-      <div className="card-wrapper">
+      <div className="card-history-wrapper" onClick={() => navigate(`/medications/${data._id}`)}>
         <img
           className="medication-card-image"
           src={data.medImg}
-          onClick={() => navigate(`/medications/${data._id}`)}
           alt="Overlay"
         />
 

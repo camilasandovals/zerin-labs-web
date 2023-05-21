@@ -3,13 +3,19 @@
   }
 
 .plus-sign{
-    width: 60px;
-    height: 60px;
-    color: #3333;
-    transition: 0.5s ease-in;
-    
+    padding-top: 18px;
+    width: 75px;
+    height: 75px;
+    color: #3333334a;
+    transition: 0.5s ease-in-out; 
+    display: inline-block;
+
 }
 
+  
+  .plus-sign:hover {
+    transform: translateY(-10px); 
+  }
 .plus-sign:hover{
     color: #ffab7b;
 }

@@ -32,7 +32,7 @@ export default function MedsHistoryGrid(){
             </Row>
         </Container> */}
         <h1>Medication History</h1>
-        <section className="medication-grid-container">
+        <section className="medication-history-container">
             
             {
                 medications?.map(

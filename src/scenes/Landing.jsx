@@ -29,8 +29,8 @@ export default function Landing(){
                 mouseZoom={false}
             />
            {/* <h1 style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', color: "white"}}>Zerin Labs</h1> */}
-            <SignUpForm />
-            <LoginForm />
+            <SignUpForm isVisibleSignUp={isVisibleSignUp} setIsVisibleSignUp={setIsVisibleSignUp} isVisibleLogin={isVisibleLogin} setIsVisibleLogin={setIsVisibleLogin}/>
+            <LoginForm isVisibleLogin={isVisibleLogin} setIsVisibleLogin={setIsVisibleLogin} isVisibleSignUp={isVisibleSignUp} setIsVisibleSignUp={setIsVisibleSignUp}/>
     
 
             </div>

@@ -9,11 +9,11 @@ export default function MenuBar() {
     <>
     <Navbar className='navbar'>
     <Container>
-      <Navbar.Brand href="/">ZerinLabs</Navbar.Brand>
+      <Navbar.Brand className='navbar-logo' href="/">ZerinLabs</Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="/home">Home</Nav.Link>
-        <Nav.Link href="/medications">Medications</Nav.Link>
-        <Nav.Link href="/user">Account</Nav.Link>
+        <Nav.Link className='navbar-link' href="/home">Home</Nav.Link>
+        <Nav.Link className='navbar-link' href="/medications">Medications</Nav.Link>
+        <Nav.Link className='navbar-link' href="/user">Account</Nav.Link>
       </Nav>
     </Container>
   </Navbar>

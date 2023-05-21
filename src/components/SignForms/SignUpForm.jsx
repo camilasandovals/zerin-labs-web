@@ -4,13 +4,12 @@ import { UserContext } from "../../App"
 import { useContext, useState } from "react"
 
 
-export default function SignUpForm() {
+export default function SignUpForm({isVisibleSignUp, setIsVisibleSignUp, isVisibleLogin, setIsVisibleLogin}) {
     const navigate = useNavigate()
     const [user, setUser] = useContext(UserContext)
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [isVisibleLogin, setIsVisibleLogin] = useState(false);
-    const [isVisibleSignUp, setIsVisibleSignUp] = useState(false);
+    
 
     const handleAddUser = async(e) => {
         if (e && e.preventDefault) {
@@ -42,11 +41,14 @@ export default function SignUpForm() {
           }
         };
 
-       
+        const setVisibility = () => {
+            setIsVisibleLogin(false)
+            setIsVisibleSignUp(true)
+        }
           
     return(
         <>
-            <button className="button-landing" variant="primary" type="submit" style={{ position: 'absolute', top: '70%', left: '60%', transform: 'translate(-50%, -50%)' }} onClick={() => setIsVisibleSignUp(true)}>Sign up</button>
+            <button className="button-landing" variant="primary" type="submit" style={{ position: 'absolute', top: '70%', left: '60%', transform: 'translate(-50%, -50%)' }} onClick={setVisibility}>Sign up</button>
         <Row className="justify-content-center">
             {isVisibleSignUp &&
             <>

@@ -19,9 +19,10 @@ export default function MedDetails() {
       }, []);
     return(
         <>
-            <section className="section-user">
-                <Row className="bg-danger justify-content-center"> 
-                        <Col md={4}className="sign-form">
+            <Container className="section-user">
+
+                <Row className="justify-content-center"> 
+                        <Col md={4} className="form-user">
                             <h1>{user?.fullname}</h1>
                             <img className="image-user" src={user?.img}/>
                             <p>Email: {user?.email}</p>
@@ -30,16 +31,22 @@ export default function MedDetails() {
                             <p>Height: {user?.height}</p>
                             <p>Weight: {user?.weight}</p>
                             <p>Created at: {(new Date(user?.createdAt)).toLocaleDateString('en-US')} </p>
+                            <Row>
+                                <Col>
+                                    <UserModal />
+                                </Col>
+                                <Col>
+                                    <button className="button-landing-form" onClick={
+                                    () => {
+                                        navigate('/');
+                                        localStorage.removeItem('user');}
+                                    }>Logout</button> 
+                                </Col>
+                            </Row>
                         
-                        <UserModal />
-                        <button className="button-landing-form" onClick={
-                            () => {
-                                navigate('/');
-                                localStorage.removeItem('user');}
-                        }>Logout</button> 
                         </Col>
                 </Row>
-            </section>
+            </Container>
         </>
     )
 }

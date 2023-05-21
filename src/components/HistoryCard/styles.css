@@ -1,5 +1,4 @@
-.medication-grid-container {
-  height: 75vh;
+.medication-history-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -7,17 +6,26 @@
   justify-content: space-around;
   padding: 1rem;
   overflow: scroll;
+  width: 100%;
 }
 
-.card-wrapper {
-  height: 32rem;
-  width: 17rem;
+.card-history-wrapper {
+  height: 20rem;
+  width: 15rem;
   position: relative;
   box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.331);
   margin: 0.8rem;
 }
 
-.card-wrapper::before {
+.card-history-wrapper:hover{
+  transform: scale(1.08);
+  box-shadow: -1px 1px 10px #ffbd23;
+  transition: 
+    transform 1.1s ease-in-out, 
+    filter 0.6s ease-in-out;
+}
+
+.card-history-wrapper::before {
   content: "";
   width: 100%;
   height: 30%;
@@ -28,6 +36,7 @@
   background: center no-repeat url("https://milasnewbucket.s3.us-east-2.amazonaws.com/FONDO4.png");
 }
 
+
 .medication-card-image {
   position: absolute;
   z-index: 5;
@@ -35,6 +44,10 @@
   left: 40%;
   height: 35%;
   width: auto;
+}
+
+.medication-card-image:hover {
+  animation: rotateHover 0.8s ease-in-out alternate infinite;
 }
 
 .medication-card-content {
@@ -62,25 +75,14 @@
   font-size: 0.9rem;
 }
 
-.medication-card-done-button {
-  content: "";
-  width: 80%;
-  height: 2.2rem;
-  border-radius: 1rem;
-  position: absolute;
-  bottom: 20%;
-  z-index: 15;
-  background: #b7beff; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 2.3rem;
-  font-weight: 900;
-  border: none;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
-  transition: 0.5s ease-in;
-}
-
-.medication-card-done-button:hover {
-  background: #ffab7b;
+@keyframes rotateHover {
+  0% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
 }

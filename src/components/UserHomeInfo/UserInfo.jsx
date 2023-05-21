@@ -19,7 +19,7 @@ export default function UserInfo() {
                     </div>
                     <h2>Points: {user?.points}</h2>
                     <div>
-                        <button className="button-landing"onClick={
+                        <button className="button-landing-form" onClick={
                             () => {
                                 navigate('/');
                                 localStorage.removeItem('user');}

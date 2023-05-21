@@ -23,14 +23,13 @@ export default function MedDetails() {
 
     return(
         <>
-            <Container>
-                <Row> 
-                    <Row>
-                        <Col >
+            <Container className="section-med-details">
+                <Row className="justify-content-center">
+                        <Col md={4} className="form-user">
                             <h1>{selectedMedication.nameMed}</h1>
                             <p>Total taken: {selectedMedication.totalTaken}</p>
                             <p>Taking since: {(new Date(selectedMedication.createdAt)).toLocaleDateString('en-US')} </p>
-                            <img src={selectedMedication.medImg} height={150}/>
+                            {/* <img src={selectedMedication.medImg} height={150}/> */}
                             <p>Dosage: {selectedMedication.dosage}  <EditModal variable="dosage" value={selectedMedication.dosage}/> </p>
                             <p>Unit: {selectedMedication.unit}  <EditModal variable="unit" value={selectedMedication.unit}/> </p>
                             <p>Quantity taking per day: {selectedMedication.quantity}  <EditModal variable="Quantity" value={selectedMedication.quantity} /> </p>
@@ -40,7 +39,6 @@ export default function MedDetails() {
                             <p>Notes: {selectedMedication.notes} <EditModal variable="notes" value={selectedMedication.notes}/> </p>
                             <p>End Date: {(new Date(selectedMedication.endDate)).toLocaleDateString('en-US')} <DateModal /></p>
                         </Col>
-                    </Row>
                 </Row>
             </Container>
         </>
