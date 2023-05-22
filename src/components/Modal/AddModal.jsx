@@ -138,7 +138,7 @@ export default function AddModal() {
                         onChange={(e) => {setDoctor(e.target.value)}}/>
                     </Form.Group>
                     <Form.Group className="mb-3" >
-                        <Form.Label>End Date</Form.Label>
+                        <Form.Label>Refill Date</Form.Label>
                         <Form.Control type="date" value={endDate}
                         onChange={(e) => {setEndDate(e.target.value)}}/>
                     </Form.Group>
