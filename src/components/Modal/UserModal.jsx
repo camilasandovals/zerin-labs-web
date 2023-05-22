@@ -52,7 +52,7 @@ export default function UserModal() {
               alert(data.message);
               return;
             }
-            setUser(data[0]);
+            setUser(data);
             setShowModal(false);
           })
           .catch(alert);

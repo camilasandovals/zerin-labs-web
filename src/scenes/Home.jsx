@@ -30,10 +30,10 @@ export default function Home(){
         
         <Container>
             <Row>
-                <Col md = {3} >
+                <Col sm = {12} md = {12} lg={3} >
                     <User />    
                 </Col>
-                <Col>
+                <Col >
                     <Row>
                         <Motivation />
                     </Row>

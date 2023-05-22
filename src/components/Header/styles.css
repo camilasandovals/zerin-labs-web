@@ -1,6 +1,6 @@
 
 /* .navbar{
-    background-color: rgb(196, 200, 255);
+    background-color: transparent
 } */
 
 .navbar-logo {
@@ -11,7 +11,7 @@
   
   .navbar-logo:hover {
     transform: scale(1.2); 
-    color: #401ea8 !important;
+    color: #5f36da !important;
   }
 
 .navbar-link:hover{
