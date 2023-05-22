@@ -26,7 +26,7 @@
   top: 0;
   left: 0;
   z-index: 0;
-  background: center no-repeat url("https://milasnewbucket.s3.us-east-2.amazonaws.com/FONDO1.png");
+  background: center no-repeat url("https://milasnewbucket.s3.us-east-2.amazonaws.com/FONDO3.png");
 }
 
 .medication-card-image {
@@ -86,3 +86,5 @@
 .medication-card-done-button:hover {
   background: #ffab7b;
 }
+
+

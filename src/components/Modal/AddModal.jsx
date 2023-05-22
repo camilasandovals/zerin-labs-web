@@ -38,7 +38,7 @@ export default function AddModal() {
         e.preventDefault()
         const email = user.email
         console.log(endDate)
-        fetch(`http://3.95.14.19:3001/api/medications/?email=${user.email}`, {
+        fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/?email=${user.email}`, {
             method:"POST",
             headers: {"Content-Type": "application/json"},   //added this line for token 
             body: JSON.stringify({nameMed, dosage, quantity, unit, frequency, 

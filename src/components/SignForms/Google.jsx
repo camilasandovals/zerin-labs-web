@@ -36,7 +36,7 @@ const auth = getAuth(app)
                     // const _user = response.user;
                     // const token = await _user.getIdToken();
                     // localStorage.setItem("token", token)
-                    fetch("http://3.95.14.19:3001/api/users", {
+                    fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/users`, {
                         method:"POST",
                         headers: {"Content-Type": "application/json"},   
                         body: JSON.stringify({email, uid})  // I AM NOT SENDING THE CORRECT UID

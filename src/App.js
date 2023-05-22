@@ -51,8 +51,8 @@ function App() {
           <SelectedMedicationContext.Provider
             value={[selectedMedication, setSelectedMedication]}
           >
-            <MenuBar />
             <BrowserRouter>
+              <MenuBar />
               <Routes>
                 <Route path="/" element={<Landing />} />
                 <Route path="/home" element={<Home />} />

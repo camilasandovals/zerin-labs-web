@@ -16,7 +16,7 @@ export default function SignUpForm({isVisibleSignUp, setIsVisibleSignUp, isVisib
             e.preventDefault();
         }
         try {
-            const response = await fetch("http://3.95.14.19:3001/api/users", {
+            const response = await fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/users`, {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

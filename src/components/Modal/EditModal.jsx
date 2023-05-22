@@ -15,7 +15,7 @@ export default function EditModal({ variable, value }) {
     const handleEditMed = (e) => {
         e.preventDefault()
         
-        fetch(`http://3.95.14.19:3001/api/medications/${id}`, {
+        fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}`, {
             method:"PATCH",
             headers: {"Content-Type": "application/json"},   //added this line for token 
             body: JSON.stringify({ variable} )

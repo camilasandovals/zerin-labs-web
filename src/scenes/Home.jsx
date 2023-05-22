@@ -15,7 +15,7 @@ export default function Home(){
 
     useEffect(() => {
         if (user) {  
-          fetch(`http://3.95.14.19:3001/api/medications/?email=${user.email}`)
+          fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/?email=${user.email}`)
             .then((resp) => resp.json())
             .then(setMedications)
             .catch(alert);
@@ -23,12 +23,12 @@ export default function Home(){
       }, [user]);
   
     if(!user) {
-        navigate('/login')
+        navigate('/')
     }
 
     return(
         
-        <Container>
+        <Container className="home-container">
             <Row>
                 <Col sm = {12} md = {12} lg={3} >
                     <User />    

@@ -11,7 +11,7 @@ export default function MedDetails() {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {  
-          fetch(`http://3.95.14.19:3001/api/users/?email=${user.email}`)
+          fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/users/?email=${user.email}`)
             .then((resp) => resp.json())
             .then(setUser)
             .catch(alert);
@@ -21,8 +21,8 @@ export default function MedDetails() {
         <>
             <Container className="section-user">
 
-                <Row className="justify-content-center"> 
-                        <Col md={4} className="form-user">
+                <Row className="justify-content-center m-0"> 
+                        <Col sm={5} md={4} className="form-user">
                             <h1>{user?.fullname}</h1>
                             <img className="image-user" src={user?.img}/>
                             <p>Email: {user?.email}</p>
@@ -51,3 +51,7 @@ export default function MedDetails() {
         </>
     )
 }
+
+<Container className="section-user" style={{ padding: 0, margin: 0, width: '100%', maxWidth: '100vw' }}>
+  {/* Content */}
+</Container>

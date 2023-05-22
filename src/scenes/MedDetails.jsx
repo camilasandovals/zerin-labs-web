@@ -10,7 +10,7 @@ export default function MedDetails() {
     const { id } = useParams();
     const [selectedMedication, setSelectedMedication] = useContext(SelectedMedicationContext);
     useEffect(()=>{
-        fetch(`http://3.95.14.19:3001/api/medications/${id}`)
+        fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}`)
         .then(resp => resp.json())
         .then(setSelectedMedication)
         .catch(alert)
@@ -24,8 +24,12 @@ export default function MedDetails() {
     return(
         <>
             <Container className="section-med-details">
-                <Row className="justify-content-center">
-                        <Col md={4} className="form-user">
+                <Row className="justify-content-center m-0">
+                    <Col className="section-med-details-image">
+                    
+                    </Col>
+                    
+                    <Col md={6} className="section-med-details-content">
                             <h1>{selectedMedication.nameMed}</h1>
                             {/* <p>Total taken: {selectedMedication.totalTaken}</p> */}
                             <p>Taking since: {(new Date(selectedMedication.createdAt)).toLocaleDateString('en-US')} </p>
@@ -39,6 +43,7 @@ export default function MedDetails() {
                             <p>Notes: {selectedMedication.notes} <EditModal variable="notes" value={selectedMedication.notes}/> </p>
                             <p>Refill Date: {(new Date(selectedMedication.endDate)).toLocaleDateString('en-US')} <DateModal /></p>
                         </Col>
+                        
                 </Row>
             </Container>
         </>
