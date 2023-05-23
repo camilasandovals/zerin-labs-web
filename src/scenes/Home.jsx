@@ -33,10 +33,10 @@ export default function Home(){
                 <Col className="section-user-home" sm = {12} md = {12} lg={3} >
                     <User />    
                 </Col>
-                <Col className = "home-add-medication">
-                    <Row className="mt-4">
+                <Col className = "home-add-medication ">
+                    {/* <Row className="mt-4">
                         <Motivation />
-                    </Row>
+                    </Row> */}
                     <Row>
                         <Grid />
                     </Row>

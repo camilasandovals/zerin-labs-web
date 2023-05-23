@@ -48,11 +48,11 @@ export default function SignUpForm({isVisibleSignUp, setIsVisibleSignUp, isVisib
           
     return(
         <>
-            <button className="button-landing" variant="primary" type="submit" style={{ position: 'absolute', top: '70%', left: '60%', transform: 'translate(-50%, -50%)' }} onClick={setVisibility}>Sign up</button>
+            <button className="button-landing" variant="primary" type="submit" style={{ position: 'absolute', top: '70%', left: '70%', transform: 'translate(-50%, -50%)' }} onClick={setVisibility}>Sign up</button>
         <Row className="justify-content-center">
             {isVisibleSignUp &&
             <>
-             <Col sm= {1} md={3} style={{ position: 'absolute', top: '38%', transform: 'translate(0%, -50%)' }} className="sign-form">
+             <Col sm= {1} md={3} style={{ position: 'absolute', top: '41%', transform: 'translate(0%, -50%)' }} className="sign-form">
             <h2>Sign Up</h2>
             {/* <p>Already an user? <span onClick={() => navigate('/login')}>Login!</span></p> */}
             <Form onSubmit={handleAddUser}>
