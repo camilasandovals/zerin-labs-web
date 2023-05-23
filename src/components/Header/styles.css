@@ -8,6 +8,12 @@
 .nvbar-logo {
     transition: 0.8s ease-in;
     font-weight: 900;
+    background-image: linear-gradient(72deg, #732af1, #e09b05);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
     
   }
   

@@ -34,7 +34,7 @@ export default function Home(){
                     <User />    
                 </Col>
                 <Col className = "home-add-medication">
-                    <Row>
+                    <Row className="mt-4">
                         <Motivation />
                     </Row>
                     <Row>

@@ -3,20 +3,21 @@
   }
 
 .plus-sign{
-    padding-top: 18px;
-    width: 75px;
-    height: 75px;
-    color: #3333334a;
+    padding-top: 8px;
+    padding-bottom: 5px;
+    width: 60px;
+    height: 60px;
+    color: #ffa36d;
     transition: 0.5s ease-in-out; 
     display: inline-block;
-
+    box-shadow: 20px 0px 50px rgba(0, 0, 0, 0.046);
 }
 
 .plus-sign:hover {
   transform: translateY(-10px); 
 }
 .plus-sign:hover{
-    color: #ffab7b;
+    color: #847bff;
 }
 .modal-content {
   border-radius: 0 !important;

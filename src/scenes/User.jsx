@@ -25,13 +25,13 @@ export default function MedDetails() {
                         <Col sm={5} md={4} className="form-user">
                             <h1>{user?.fullname}</h1>
                             <img className="image-user" src={user?.img}/>
-                            <p>Email: {user?.email}</p>
-                            <p>Points: {user?.points}</p>
-                            <p>Age: {user?.age}</p>
-                            <p>Gender: {user?.gender}</p>
-                            <p>Height: {user?.height}</p>
-                            <p>Weight: {user?.weight}</p>
-                            <p>Created at: {(new Date(user?.createdAt)).toLocaleDateString('en-US')} </p>
+                            <p><strong>Email: </strong>{user?.email}</p>
+                            <p><strong>Points: </strong>{user?.points}</p>
+                            <p><strong>Age: </strong>{user?.age}</p>
+                            <p><strong>Gender: </strong>{user?.gender}</p>
+                            <p><strong>Height: </strong>{user?.height}</p>
+                            <p><strong>Weight: </strong>{user?.weight}</p>
+                            <p><strong>Created at: </strong>{(new Date(user?.createdAt)).toLocaleDateString('en-US')} </p>
                             <Row>
                                 <Col>
                                     <UserModal />

@@ -19,7 +19,7 @@ export default function MedsHistoryGrid(){
     return(
         <>
 
-        <h1>Medication History</h1>
+        <h1 className="mt-4" >Medication History</h1>
         <section className="medication-history-container container">
             
             {
