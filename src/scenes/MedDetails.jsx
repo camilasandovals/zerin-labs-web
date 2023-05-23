@@ -38,9 +38,9 @@ export default function MedDetails() {
                             <div className="text-start">
                                 <h1>{selectedMedication.nameMed}</h1>
                                 {/* <p>Total taken: {selectedMedication.totalTaken}</p> */}
-                                
+                                {/* <img className="pl-4" src={selectedMedication.medImg} height={100}/> */}
                                 <p><strong>   Taking since: </strong>{(new Date(selectedMedication.createdAt)).toLocaleDateString('en-US')} </p>
-                                {/* <img src={selectedMedication.medImg} height={150}/> */}
+        
                                 <p><EditModal variable="dosage" value={selectedMedication.dosage}/> <strong>Dosage: </strong>{selectedMedication.dosage}   </p>
                                 <p><EditModal variable="unit" value={selectedMedication.unit}/>  <strong>Unit: </strong> {selectedMedication.unit}  </p>
                                 <p><EditModal variable="quantity" value={selectedMedication.quantity} /> <strong>Quantity taking per day:</strong> {selectedMedication.quantity}  </p>

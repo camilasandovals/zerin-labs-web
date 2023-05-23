@@ -22,9 +22,11 @@ export default function MedDetails() {
             <Container className="section-user">
 
                 <Row className="justify-content-center m-0"> 
-                        <Col sm={5} md={4} className="form-user">
+                        <Col sm={5} md={3} lg={4} className="form-user">
+                        
                             <h1>{user?.fullname}</h1>
                             <img className="image-user" src={user?.img}/>
+                            <div className="text-start" style={{paddingLeft:150}}>
                             <p><strong>Email: </strong>{user?.email}</p>
                             <p><strong>Points: </strong>{user?.points}</p>
                             <p><strong>Age: </strong>{user?.age}</p>
@@ -32,6 +34,7 @@ export default function MedDetails() {
                             <p><strong>Height: </strong>{user?.height}</p>
                             <p><strong>Weight: </strong>{user?.weight}</p>
                             <p><strong>Created at: </strong>{(new Date(user?.createdAt)).toLocaleDateString('en-US')} </p>
+                            </div>
                             <Row>
                                 <Col>
                                     <UserModal />
