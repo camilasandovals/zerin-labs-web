@@ -55,7 +55,7 @@ export default function MedicationCard({ data }) {
             <span>Frecuency:</span> {data.frequency}
           </p>
           <button className="medication-card-done-button"  onClick={() => handleMedTaken(data._id)}>
-            <h2 style={{marginBottom: 0}}>Taken!</h2></button>
+            <h2 style={{marginBottom: 0}}>Taken</h2></button>
         </div>
       </div>
       

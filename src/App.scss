@@ -22,8 +22,8 @@ h1 {
   color: rgb(18, 18, 18);
   margin-top: 25px;
   font-family: 'Montserrat', sans-serif;
-  font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 500;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  font-weight: 600;
   transition: 0.5s ease-in;
   
 }
@@ -40,7 +40,7 @@ h2 {
 
 h3 {
     padding: 10%;
-    font-size: clamp(20px, 2vw, 40px);
+    font-size: clamp(25px, 2vw, 40px);
     font-weight: 700;
 }
 
@@ -59,17 +59,11 @@ p {
 // home
 
 .home-add-medication {
-  // background: url("https://cdn.shopify.com/s/files/1/0582/3453/6088/files/home-moonlight-background.webp?v=1680467003");
-  // background-repeat: no-repeat;
-  // background-attachment: fixed;
-  // background-size: cover; 
-  // background-position: center; 
-  // margin-top: 10px;
-  // background-attachment: fixed;
-  // background-color: rgba(0, 0, 0, 0.583);
-  // background-blend-mode: color;
-  // margin: 0;
-  // padding: 0;
+  background: url("https://pxdraft.com/react/kanye/img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+  background-position: center; 
   
 }
 
