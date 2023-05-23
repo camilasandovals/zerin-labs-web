@@ -1,7 +1,6 @@
-
 .nvbar{
   /* background-color: rgba(215, 215, 226, 0.479); */
-  background-color: rgba(248, 242, 239, 0.758);
+  background-color: rgb(248, 242, 239);
     position: sticky !important;
     box-shadow: 20px 0px 50px rgba(0, 0, 0, 0.206);
 }
@@ -16,13 +15,14 @@
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
     animation: logo-zoom 5s infinite alternate ease-in-out;
+    text-shadow: 2px 2px 4px rgba(96, 94, 101, 0.244);
   }
   
 
 .nvbar-link:hover{
-    box-shadow: 0px 4px 0px 0px #847bff;
-    transition: 0.4s ease-in;
-    color: #847bff !important;
+    box-shadow: 0px 4px 0px 0px #6760cc;
+    transition: 0.1s ease-in;
+    color: #6760cc
 }
 
 @keyframes logo-zoom {

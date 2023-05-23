@@ -1,5 +1,5 @@
 .medication-grid-container {
-  height: 84vh;
+  height: 85vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -63,7 +63,7 @@
 
 .medication-card-content p span {
   color: rgb(18, 18, 18);
-  font-weight: 800;
+  font-weight: 400;
   font-size: 0.9rem;
 }
 
@@ -85,10 +85,10 @@
   border: none;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
   transition: 0.5s ease-in;
-  
   position: relative;
   top: 5px;
   left: 9px;
+  
 }
 
 .medication-card-done-button:hover {

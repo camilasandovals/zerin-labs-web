@@ -31,26 +31,29 @@ h1 {
     -webkit-background-clip: text;
     -moz-background-clip: text;
     -moz-text-fill-color: transparent;
-  
+    text-shadow: 2px 2px 4px rgba(30, 30, 30, 0.13);
 }
 
 
 h2 {
   font-size: clamp(20px, 2vw, 28px);
   font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(30, 30, 30, 0.13);
 }
 
 h3 {
-    padding: 10%;
-    font-size: clamp(30px, 2vw, 50px);
-    font-weight: 700;
-    background-image: linear-gradient(72deg, #5a5691, #ffa673);
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
+  padding-top: 10%;
+  font-size: clamp(30px, 2vw, 50px);
+  font-weight: 700;
+  background-image: linear-gradient(72deg, #4c43c9, #ffa673);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  text-shadow: 2px 2px 4px rgba(30, 30, 30, 0.128);
 }
+
 
 p {
     font-size: clamp(14px, 2vw, 16px);
