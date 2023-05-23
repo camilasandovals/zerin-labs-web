@@ -11,14 +11,14 @@
     transition: 0.5s ease-in-out; 
     display: inline-block;
     box-shadow: 20px 0px 50px rgba(0, 0, 0, 0.046);
+    transition: color 0.3s ease-in-out;
 }
 
 .plus-sign:hover {
-  transform: translateY(-10px); 
+  transform: translateY(-40px);
+  animation: color-change 2s infinite; 
 }
-.plus-sign:hover{
-    color: #847bff;
-}
+
 .modal-content {
   border-radius: 0 !important;
 }
@@ -47,4 +47,19 @@
 .button-modal{
   display: flex;
   justify-content: center;
+}
+
+@keyframes color-change {
+  0% {
+    color: #ffa36d;
+  }
+  33% {
+    color: #7b88ff;
+  }
+  66% {
+    color: #ffa36d;
+  }
+  100% {
+    color: #7b88ff;
+  }
 }
