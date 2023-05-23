@@ -10,19 +10,20 @@ export default function UserInfo() {
     const navigate = useNavigate()
 
     return(
-        <section className="section-user-home">
+        <section>
                     <div>
                     <h2>Welcome {user && user.fullname? user.fullname : 'User'}</h2>
                     </div>
                     <div>
                         <img src={user?.img} className="image-user-home"/>
                     </div>
-                    <h2>Points: {user?.points}</h2>
+                    <h3>Points: {user?.points}</h3>
                     <div>
                         <button className="button-landing-form" onClick={
                             () => {
                                 navigate('/');
-                                localStorage.removeItem('user');}
+                                localStorage.removeItem('user')
+                                setUser(null);}
                         }>Logout</button> 
                     </div>
         </section>

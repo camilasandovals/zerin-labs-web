@@ -21,13 +21,14 @@ export default function MedicationCard({ data }) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ show: false }),
+        body: JSON.stringify({ variable:"show", value:false }),
       }
     );
     // {medications:medications, user:thisUser}
     const data = await response.json();
     setMedications(data.medications);
     setUser(data.user)
+    localStorage.setItem("user", JSON.stringify(data.user))
   };
 
   const background = [];

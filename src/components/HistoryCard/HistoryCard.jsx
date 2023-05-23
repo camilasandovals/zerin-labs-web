@@ -23,21 +23,9 @@ export default function HistoryCard({data}){
       };
 
     return (
-    // <Col >
-    //     <Card style={{ width: '18rem' }} >
-    //     <Card.Img variant="top" src={data.medImg} onClick={() => navigate(`/medications/${data._id}`) }/> 
-    //     <Card.Body>
-    //         <Card.Title>{data.nameMed}</Card.Title>
-    //         <Card.Text>Quantity taking per day: {data.quantity}</Card.Text>
-    //         <Card.Text>Dosage: {data.dosage} {data.unit}</Card.Text>
-    //         <Card.Text>Frequency: {data.frequency}</Card.Text>
-    //         <Card.Text>Notes: {data.notes}</Card.Text>
-    //     </Card.Body>
-    //     </Card>
-    // </Col>
 
-    <Col className="d-flex justify-content-center ">
-      <div className="card-history-wrapper" onClick={() => navigate(`/medications/${data._id}`)}>
+    <Col className="d-flex justify-content-center">
+      <div className="card-history-wrapper " onClick={() => navigate(`/medications/${data._id}`)}>
         <img
           className="medication-card-history-image"
           src={data.medImg}

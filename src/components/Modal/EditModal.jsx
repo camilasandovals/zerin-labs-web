@@ -18,7 +18,7 @@ export default function EditModal({ variable, value }) {
         fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}`, {
             method:"PATCH",
             headers: {"Content-Type": "application/json"},   //added this line for token 
-            body: JSON.stringify({ variable} )
+            body: JSON.stringify({ variable, value} )
        })
            .then(resp => resp.json())
            .then( data => {

@@ -40,7 +40,8 @@ export default function MedDetails() {
                                     <button className="button-landing-form" onClick={
                                     () => {
                                         navigate('/');
-                                        localStorage.removeItem('user');}
+                                        localStorage.removeItem('user');
+                                        setUser(null)}
                                     }>Logout</button> 
                                 </Col>
                             </Row>

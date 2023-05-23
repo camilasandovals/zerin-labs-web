@@ -20,20 +20,20 @@ export default function Home(){
             .then(setMedications)
             .catch(alert);
         }
+        // if(!user) {
+        //     navigate('/')
+        // }
       }, [user]);
   
-    if(!user) {
-        navigate('/')
-    }
 
     return(
         
-        <Container className="home-container">
+        <section className="home-container">
             <Row>
-                <Col sm = {12} md = {12} lg={3} >
+                <Col className="section-user-home" sm = {12} md = {12} lg={3} >
                     <User />    
                 </Col>
-                <Col >
+                <Col className = "home-add-medication">
                     <Row>
                         <Motivation />
                     </Row>
@@ -45,6 +45,6 @@ export default function Home(){
                     </Row>
                 </Col>
             </Row>
-        </Container>
+        </section>
     ) 
 }

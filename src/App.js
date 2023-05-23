@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { useState, createContext, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Home from "./scenes/Home";
 
 import Landing from "./scenes/Landing";
@@ -34,15 +35,21 @@ function App() {
   const [medications, setMedications] = useState();
   const [selectedMedication, setSelectedMedication] = useState();
   const [user, setUser] = useState();
+  // const navigate = useNavigate();
 
   useEffect(() => {
     const oldUser = localStorage.getItem("user");
-    if (oldUser) {
-      setUser(JSON.parse(oldUser));
-      console.log("HERE IS THE USER")
-      console.log(user)
+    console.log({ oldUser });
+    const parsedUser = JSON.parse(oldUser);
+    if (parsedUser) {
+      setUser(parsedUser);
+      console.log("HERE IS THE USER");
+      console.log(user);
     }
-  }, []);
+    //   if(!user) {
+    //     navigate('/')
+    // }
+  }, [setUser]);
 
   return (
     <div className="App">
@@ -54,8 +61,8 @@ function App() {
             <BrowserRouter>
               <MenuBar />
               <Routes>
-                <Route path="/" element={<Landing />} />
-                <Route path="/home" element={<Home />} />
+                <Route path="/" element={user? <Navigate to="/home" /> : <Landing /> } />
+                <Route path="/home" element={user ? <Home /> : <Navigate to="/" />} />
                 <Route path="/medications/:id" element={<MedDetails />} />
                 <Route path="/medications/" element={<MedsHistoryGrid />} />
                 <Route path="/user/" element={<User />} />

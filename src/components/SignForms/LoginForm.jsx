@@ -52,7 +52,7 @@ export default function SignUpForm({isVisibleLogin, setIsVisibleLogin, isVisible
         <Row className="justify-content-center">
         {isVisibleLogin &&
             <>
-        <Col md={3} style={{ position: 'absolute', top: '35%', transform: 'translate(0%, -50%)' }} className="sign-form">
+        <Col md={3} style={{ position: 'absolute', top: '38%', transform: 'translate(0%, -50%)' }} className="sign-form">
             <h2>Login</h2>
             {/* <p>Already an user? <span onClick={() => navigate('/signup')}>Sign up!</span></p> */}
             <Form onSubmit={handleGetUser}>

@@ -53,7 +53,9 @@ export default function UserModal() {
               return;
             }
             setUser(data);
+            localStorage.setItem("user", JSON.stringify(data))
             setShowModal(false);
+
           })
           .catch(alert);
       };

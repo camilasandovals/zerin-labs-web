@@ -18,21 +18,9 @@ export default function MedsHistoryGrid(){
 
     return(
         <>
-        {/* <Container>
-            <Row>
-                {medications.endDate == //..........
-                    medications?.map(
-                        (data) => (
-                            data
-                            ? <HistoryCard key={data._id} data={data}/>
-                            : <p> </p>
-                        )
-                    )
-                }
-            </Row>
-        </Container> */}
+
         <h1>Medication History</h1>
-        <section className="medication-history-container">
+        <section className="medication-history-container container">
             
             {
                 medications?.map(

@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;1,100;1,300&family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,300;0,500;0,600;0,700;0,800;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 // @font-face {
 // 	font-family: Alte Haas Grotesk Regular;
 // 	src: url("../public/assets/AlteHaasGroteskRegular.ttf")
@@ -10,6 +11,7 @@
 
 body {
   font-family: 'Rubik', sans-serif;
+  // background-color: #ec6034;
 }
 
 .App {
@@ -17,35 +19,57 @@ body {
   }
 
 h1 {
+  color: rgb(18, 18, 18);
+  margin-top: 25px;
   font-family: 'Montserrat', sans-serif;
   font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 800;
+  font-weight: 500;
   transition: 0.5s ease-in;
   
 }
 
-h1:hover{
-  font-size: clamp(28px, 4vw, 32px);
-  // box-shadow: 0px 0px 5px rgba(106, 78, 216, 0.693);
-}
+// h1:hover{
+//   font-size: clamp(28px, 4vw, 32px);
+//   // box-shadow: 0px 0px 5px rgba(106, 78, 216, 0.693);
+// }
 
 h2 {
-  font-size: clamp(20px, 2vw, 24px);
-  font-weight: 900;
+  font-size: clamp(20px, 2vw, 30px);
+  font-weight: 400;
 }
 
 h3 {
-    font-size: clamp(16px, 2vw, 16px);
+    padding: 10%;
+    font-size: clamp(20px, 2vw, 40px);
     font-weight: 700;
 }
 
-p{
+p {
     font-size: clamp(14px, 2vw, 16px);
+    font-weight: 200;
+
+}
+
+
+//landing
+.section-landing-360-container h1{
+  font-size: clamp(25px, 2vw, 40px);
 }
 
 // home
 
-.home-container{
+.home-add-medication {
+  // background: url("https://cdn.shopify.com/s/files/1/0582/3453/6088/files/home-moonlight-background.webp?v=1680467003");
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-size: cover; 
+  // background-position: center; 
+  // margin-top: 10px;
+  // background-attachment: fixed;
+  // background-color: rgba(0, 0, 0, 0.583);
+  // background-blend-mode: color;
+  // margin: 0;
+  // padding: 0;
   
 }
 
@@ -159,7 +183,9 @@ p{
 
 //medication details
 
-
+.edit-buttons-for-modal{
+  margin-top: 150px;
+}
 .section-med-details{ 
   width: 100%;
   height: 100%;
@@ -181,9 +207,13 @@ p{
 }
 
 .section-med-details-content {
-  padding-top: 3%;
+  padding-top: 1%;
 }
 
+.section-med-details-content h1 {
+  padding: 30px;
+  color: #333;
+}
 
 @keyframes rotateHover {
   0% {
