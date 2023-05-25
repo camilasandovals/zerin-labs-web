@@ -19,7 +19,7 @@ export default function UserInfo() {
                     </div>
                     <h3>Points: {user?.points}</h3>
                     <div>
-                    <p className="p-5">Your health, a gift worth preserving for family.</p>
+                    <p className="p-5 p-user-home">Your health, a gift worth preserving for family.</p>
                     </div>
                     <div>
                         <button className="button-landing-form" onClick={

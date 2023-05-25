@@ -26,7 +26,7 @@ export default function MedDetails() {
                         
                             <h1>{user?.fullname}</h1>
                             <img className="image-user" src={user?.img}/>
-                            <div className="text-start" style={{paddingLeft:150}}>
+                            <div className="text-start" style={{paddingLeft:100}}>
                             <p><strong>Email: </strong>{user?.email}</p>
                             <p><strong>Points: </strong>{user?.points}</p>
                             <p><strong>Age: </strong>{user?.age}</p>

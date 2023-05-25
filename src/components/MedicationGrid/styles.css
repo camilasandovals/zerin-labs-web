@@ -16,7 +16,7 @@
   position: relative;
   box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.331);
   margin: 0.8rem;
-  background-color: white;
+  background-color: rgba(252, 250, 248);
  
 }
 
@@ -52,7 +52,7 @@
   flex-direction: column;
   align-items: flex-start;
   padding-left: 2rem;
-  background-color: white;
+  background-color: rgba(252, 250, 248, 0.758);
 }
 
 .medication-card-content p {

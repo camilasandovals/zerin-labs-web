@@ -9,6 +9,10 @@
 // 	src: url("../public/assets/AlteHaasGroteskBold.ttf")
 // }
 
+.row{
+  --bs-gutter-x: 0rem;
+}
+
 body {
   font-family: 'Rubik', sans-serif;
   // background-color: #ec6034;
@@ -89,7 +93,7 @@ p {
 
 .section-user-home{
   // background-color: rgba(215, 215, 226, 0.479);
-  background-color: rgba(248, 242, 239, 0.758);
+  background-color: rgba(252, 250, 248, 0.758);
   
 }
 

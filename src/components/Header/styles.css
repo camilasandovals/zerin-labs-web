@@ -1,6 +1,6 @@
 .nvbar{
   /* background-color: rgba(215, 215, 226, 0.479); */
-  background-color: rgb(248, 242, 239);
+  background-color: rgba(252, 250, 248);
     position: sticky !important;
     box-shadow: 20px 0px 50px rgba(0, 0, 0, 0.206);
 }
@@ -24,6 +24,7 @@
     transition: 0.1s ease-in;
     color: #6760cc
 }
+
 
 @keyframes logo-zoom {
   0% {

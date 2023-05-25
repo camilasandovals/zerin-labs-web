@@ -7,14 +7,16 @@
   padding: 1rem;
   overflow: scroll;
   width: 100%;
+  
 }
 
 .card-history-wrapper {
-  height: 20rem;
+  height: 23rem;
   width: 15rem;
   position: relative;
   box-shadow: -1px 1px 10px rgba(0, 0, 0, 0.331);
   margin: 0.8rem;
+  background-color: rgba(252, 250, 248);
 }
 
 .card-history-wrapper:hover{

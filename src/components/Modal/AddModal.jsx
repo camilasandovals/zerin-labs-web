@@ -63,6 +63,7 @@ export default function AddModal() {
 
   return (
     <>
+    
     <PlusCircleFill className="plus-sign" onClick={() => setShowModal(true)} />
     <Modal show={showModal} onHide={() => setShowModal(false) } className="class-modal">
     

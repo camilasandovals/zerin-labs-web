@@ -30,7 +30,7 @@ export default function Landing(){
                 showFullscreenCtrl={false}
                 mouseZoom={false}
             />
-           <h1 className = "main-h1" style={{ position: 'absolute', top: '13%', left: '50%', transform: 'translate(-50%, -50%)', color: "white"}}>Zerin Labs</h1>
+           <h1 className = "main-h1" style={{ position: 'absolute', top: '13%', left: '50%', transform: 'translate(-50%, -50%)', color: "white"}}>ZerinLabs</h1>
             
             <SignUpForm isVisibleSignUp={isVisibleSignUp} setIsVisibleSignUp={setIsVisibleSignUp} isVisibleLogin={isVisibleLogin} setIsVisibleLogin={setIsVisibleLogin}/>
             <LoginForm isVisibleLogin={isVisibleLogin} setIsVisibleLogin={setIsVisibleLogin} isVisibleSignUp={isVisibleSignUp} setIsVisibleSignUp={setIsVisibleSignUp}/>
