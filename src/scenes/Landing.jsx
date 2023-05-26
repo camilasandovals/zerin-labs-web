@@ -1,6 +1,6 @@
 import { Pannellum } from 'pannellum-react';
 import { Button, Container } from "react-bootstrap";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import bg from "../images/ZerinLabs.webp";
 import { useState } from "react"
 import SignUpForm from '../components/SignForms/SignUpForm';
@@ -10,7 +10,7 @@ export default function Landing(){
     const navigate = useNavigate()
     const [isVisibleLogin, setIsVisibleLogin] = useState(false);
     const [isVisibleSignUp, setIsVisibleSignUp] = useState(false);
-    let location = useLocation();
+ 
 
     
     

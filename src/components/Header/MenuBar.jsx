@@ -15,7 +15,7 @@ export default function MenuBar() {
     <>
     <Navbar fixed='top' className='nvbar'>
     <Container>
-      <Navbar.Brand className='nvbar-logo' href="/">ZerinLabs</Navbar.Brand>
+      <Navbar.Brand className='nvbar-logo' href="/labs">ZerinLabs</Navbar.Brand>
       <Nav className="me-auto">
         <Nav.Link className='nvbar-link' href="/home">Home</Nav.Link>
         <Nav.Link className='nvbar-link' href="/medications">Medications</Nav.Link>
