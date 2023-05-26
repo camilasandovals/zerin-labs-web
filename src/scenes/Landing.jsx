@@ -1,7 +1,7 @@
 import { Pannellum } from 'pannellum-react';
 import { Button, Container } from "react-bootstrap";
 import { useNavigate, useLocation } from "react-router-dom";
-import bg from "../images/ZerinLabs.png";
+import bg from "../images/ZerinLabs.webp";
 import { useState } from "react"
 import SignUpForm from '../components/SignForms/SignUpForm';
 import LoginForm from '../components/SignForms/LoginForm';
