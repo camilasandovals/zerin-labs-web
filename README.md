@@ -1,6 +1,6 @@
 # Zerin Labs
 
-Are you often forgetful with medication and experience anxiety or depression? ZerinLabs is here for you! Our website offers calming AI-generated images and aids in medication reminders. It's engaging too—you earn points for completing your medication!
+Full Stack web app using React. Styled using Bootstrap and CSS. Back-end development using MongoDB database and Node/Express RESTful API. Deployed API with AWS EC2 and front-end with AWS S3. Built security with JWT (JSON Web Token) for authentication/authorization and password hashing.
 
 <img width="1440" alt="Screenshot 2023-05-25 at 1 11 06 PM" src="https://github.com/camilasandovals/zerin-labs-web/assets/83136741/c0b23e04-5786-45ae-a39d-42c33021cf10">
 
