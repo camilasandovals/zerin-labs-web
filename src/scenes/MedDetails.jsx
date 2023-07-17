@@ -14,7 +14,7 @@ export default function MedDetails() {
     
     useEffect(()=>{
        
-        fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}`)
+        fetch(`${process.env.REACT_APP_APIENDPOINT}/api/medications/${id}`)
         .then(resp => resp.json())
         .then(setSelectedMedication)
         .catch(alert)

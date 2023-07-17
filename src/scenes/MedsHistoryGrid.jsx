@@ -9,7 +9,7 @@ export default function MedsHistoryGrid(){
     
     useEffect(() => {
         if (user) {  
-          fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/?email=${user.email}`)
+          fetch(`${process.env.REACT_APP_APIENDPOINT}/api/medications/?email=${user.email}`)
             .then((resp) => resp.json())
             .then(setMedications)
             .catch(alert);

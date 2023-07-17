@@ -16,7 +16,7 @@ export default function DateModal() {
     const handleEditMed = (e) => {
         e.preventDefault()
         console.log(endDate)
-        fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}`, {
+        fetch(`${process.env.REACT_APP_APIENDPOINT}/api/medications/${id}`, {
             method:"PATCH",
             headers: {"Content-Type": "application/json"},   //added this line for token 
             body: JSON.stringify({ endDate })

@@ -41,7 +41,7 @@ export default function UserModal() {
           updatedFields.img = img;
         }
       
-        fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/users/?email=${user.email}`, {
+        fetch(`${process.env.REACT_APP_APIENDPOINT}/api/users/?email=${user.email}`, {
           method: "PATCH",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(updatedFields),

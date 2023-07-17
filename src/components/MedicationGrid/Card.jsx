@@ -15,7 +15,7 @@ export default function MedicationCard({ data }) {
 
   const handleMedTaken = async (id) => {
     const response = await fetch(
-      `${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}?email=${user.email}`,
+      `${process.env.REACT_APP_APIENDPOINT}/api/medications/${id}?email=${user.email}`,
       {
         method: "PATCH",
         headers: {

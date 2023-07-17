@@ -11,7 +11,7 @@ export default function MedDetails() {
     const navigate = useNavigate()
     useEffect(() => {
         if (user) {  
-          fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/users/?email=${user.email}`)
+          fetch(`${process.env.REACT_APP_APIENDPOINT}/api/users/?email=${user.email}`)
             .then((resp) => resp.json())
             .then(setUser)
             .catch(alert);

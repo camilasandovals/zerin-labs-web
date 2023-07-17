@@ -11,7 +11,7 @@ export default function HistoryCard({data}){
     const navigate = useNavigate();
     
     const handleDelete = async (id) => {
-        const response = await fetch(`${process.env.REACT_APP_APIENDPOINT}:3001/api/medications/${id}`, {
+        const response = await fetch(`${process.env.REACT_APP_APIENDPOINT}/api/medications/${id}`, {
           method: "PATCH", // Use the PATCH method instead of DELETE
           headers: {
             "Content-Type": "application/json",
