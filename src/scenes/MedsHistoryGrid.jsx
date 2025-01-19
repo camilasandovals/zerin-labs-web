@@ -20,7 +20,13 @@ export default function MedsHistoryGrid(){
         <>
 
         <h1 className="mt-4" >Medication History</h1>
-        <section className="medication-history-container container">
+        <section className="medication-grid-container">
+
+            {medications?.length === 0 && (
+                <div className="no-medications">
+                    <h2>No medications found</h2>
+                </div>
+            )}
             
             {
                 medications?.map(

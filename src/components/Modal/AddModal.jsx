@@ -34,6 +34,19 @@ export default function AddModal() {
         { value: "%", label: "%" }
     ];
 
+    const resetForm = () => {
+        setName('');
+        setDosage('');
+        setQuantity('');
+        setUnit('');
+        setFrequency('');
+        setMedImg('');
+        setNotes('');
+        setEndDate('');
+        setDoctor('');
+      };
+      
+
     const handleAddMed = (e) => {
         e.preventDefault()
         const email = user.email
@@ -70,88 +83,156 @@ export default function AddModal() {
         <Modal.Body>
             <div className="form-modal">
                 <h2>Add medication</h2>
-                    <Form className="form-modal" onSubmit={handleAddMed}> 
-                    <Form.Group className="mb-3">
+                <Form className="form-modal" onSubmit={(e) => { handleAddMed(e); resetForm(); }}>
+                {/* First Row */}
+                <div className="row mb-4">
+                    <div className="col-md-5">
+                    <Form.Group>
                         <Form.Label>Medication Name</Form.Label>
-                        <Select options={options} required={true}
-                            onChange={ (e) => {setName(e.value)}}/>
+                        <Select 
+                        options={options} 
+                        required={true}
+                        onChange={(e) => { setName(e.value); }} 
+                        />
                     </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Dosage</Form.Label>
-                        <Form.Control type="Number" value={dosage} required={true} 
-                         onChange={(e) => {setDosage(e.target.value)}}/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Unit</Form.Label>
-                        <Select options={units} required={true}
-                            onChange={ (e) => {setUnit(e.value)}}/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Quantity</Form.Label>
-                        <Form.Control type="text" value={quantity} required={true} placeholder="Ex: 1 tablet" onChange={(e) => {setQuantity(e.target.value)}}/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Frequency</Form.Label>
-                        <Form.Control type="text" value={frequency} required={true} placeholder="Ex: Three times daily" onChange={(e) => {setFrequency(e.target.value)}}/>
-                    </Form.Group>
-                    {/* Radio starts*/}
-                    <div >
-                        <label className="radio-med-img">
-                            <input
-                            type="radio"
-                            name="test"
-                            id="option1"
-                            value={image}
-                            checked={medImg === image}
-                            onChange={handleImageChange}
-                            />
-                            <img src={image}  width={30}/>
-                        </label>
-
-                        <label className="radio-med-img">
-                            <input
-                            type="radio"
-                            name="test"
-                            id="option2"
-                            value={image2}
-                            checked={medImg === image2}
-                            onChange={handleImageChange}
-                            />
-                            <img src={image2}  width={30}/>
-                        </label>
-
-                        <label className="radio-med-img">
-                            <input
-                            type="radio"
-                            name="test"
-                            id="option3"
-                            value={image3}
-                            checked={medImg === image3}
-                            onChange={handleImageChange}
-                            />
-                            <img src={image3}  width={30}/>
-                        </label>
-                        </div>
-                    {/* Radio ends */}
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Prescribed by:</Form.Label>
-                        <Form.Control type="text" value={doctor} placeholder="Ex: Dr. Smith" 
-                        onChange={(e) => {setDoctor(e.target.value)}}/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Refill Date</Form.Label>
-                        <Form.Control type="date" value={endDate}
-                        onChange={(e) => {setEndDate(e.target.value)}}/>
-                    </Form.Group>
-                    <Form.Group className="mb-3" >
-                        <Form.Label>Notes</Form.Label>
-                        <Form.Control type="text" value={notes} placeholder="Ex: Take at night, with a meal" 
-                        onChange={(e) => {setNotes(e.target.value)}}/>
-                    </Form.Group>
-                    <div className="button-modal">
-                      <button className="button-landing-form" type="submit">Save</button>
                     </div>
-                    </Form>
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Dosage</Form.Label>
+                        <Form.Control 
+                        type="Number" 
+                        value={dosage} 
+                        required={true}
+                        onChange={(e) => { setDosage(e.target.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                </div>
+
+                {/* Second Row */}
+                <div className="row mb-4">
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Unit</Form.Label>
+                        <Select 
+                        options={units} 
+                        required={true}
+                        onChange={(e) => { setUnit(e.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Quantity</Form.Label>
+                        <Form.Control 
+                        type="text" 
+                        value={quantity} 
+                        required={true} 
+                        placeholder="Ex: 1 tablet"
+                        onChange={(e) => { setQuantity(e.target.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                </div>
+
+                {/* Third Row */}
+                <div className="row mb-4">
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Frequency</Form.Label>
+                        <Form.Control 
+                        type="text" 
+                        value={frequency} 
+                        required={true} 
+                        placeholder="Ex: Three times"
+                        onChange={(e) => { setFrequency(e.target.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Prescribed by:</Form.Label>
+                        <Form.Control 
+                        type="text" 
+                        value={doctor} 
+                        placeholder="Ex: Dr. Smith"
+                        onChange={(e) => { setDoctor(e.target.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                </div>
+
+                {/* Fourth Row */}
+                <div className="row mb-4">
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Refill Date</Form.Label>
+                        <Form.Control 
+                        type="date" 
+                        value={endDate}
+                        onChange={(e) => { setEndDate(e.target.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                    <div className="col-md-5">
+                    <Form.Group>
+                        <Form.Label>Notes</Form.Label>
+                        <Form.Control 
+                        type="text" 
+                        value={notes} 
+                        placeholder="Ex: Take at night"
+                        onChange={(e) => { setNotes(e.target.value); }} 
+                        />
+                    </Form.Group>
+                    </div>
+                </div>
+
+                {/* Radio buttons */}
+                <div className="mb-4">
+                    <label className="radio-med-img">
+                    <input
+                        type="radio"
+                        name="test"
+                        id="option1"
+                        value={image}
+                        checked={medImg === image}
+                        onChange={handleImageChange}
+                    />
+                    <img src={image} width={30} />
+                    </label>
+
+                    <label className="radio-med-img">
+                    <input
+                        type="radio"
+                        name="test"
+                        id="option2"
+                        value={image2}
+                        checked={medImg === image2}
+                        onChange={handleImageChange}
+                    />
+                    <img src={image2} width={30} />
+                    </label>
+
+                    <label className="radio-med-img">
+                    <input
+                        type="radio"
+                        name="test"
+                        id="option3"
+                        value={image3}
+                        checked={medImg === image3}
+                        onChange={handleImageChange}
+                    />
+                    <img src={image3} width={30} />
+                    </label>
+                </div>
+
+                {/* Submit Button */}
+                <div className="button-modal">
+                    <button className="button-landing-form" type="submit">Save</button>
+                </div>
+                </Form>
+
+
             </div> 
         </Modal.Body>
     </Modal >

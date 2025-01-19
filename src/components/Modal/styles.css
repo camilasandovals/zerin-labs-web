@@ -16,8 +16,8 @@
 
 
 .plus-sign:hover {
-  transform: translateY(-40px);
   animation: color-change 2s infinite; 
+  cursor: pointer;
 }
 
 .modal-content {
@@ -30,8 +30,13 @@
   border-width: 30px;
 }
 .form-modal {
-  padding: 20px;
+  padding: 10px;
 }
+
+.row {
+  gap: 15px; 
+}
+
 
 .class-modal{
   backdrop-filter: blur(10px);

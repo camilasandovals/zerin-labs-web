@@ -13,4 +13,4 @@ Full Stack web app using React. Styled using Bootstrap and CSS. Back-end develop
 <img width="1440" alt="Screenshot 2023-05-25 at 1 04 31 PM" src="https://github.com/camilasandovals/zerin-labs-web/assets/83136741/e0e9fd5d-671b-4c88-8ea0-8c67f6de4895">
 
 ## Live Demo
-https://zerinlabs.com/
+https://zerin-labs-web.vercel.app/

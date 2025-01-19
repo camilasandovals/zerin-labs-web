@@ -10,7 +10,12 @@ export default function Grid() {
   return (
 
     <section className="medication-grid-container">
-      
+      {medications?.length === 0 && (
+        <div className="no-medications">
+          <h2>No medications found</h2>
+        </div>
+      )
+      }
       {medications?.map((data) =>
         data.show ? (
           <MedicationCard key={data._id} data={data} />

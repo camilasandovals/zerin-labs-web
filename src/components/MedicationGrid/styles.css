@@ -6,8 +6,18 @@
   align-items: flex-start;
   justify-content: space-around;
   padding: 1rem;
-  overflow: scroll;
+  overflow: auto;
   
+}
+
+.no-medications {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;  
+  color: #727387;
 }
 
 .card-wrapper {
@@ -18,6 +28,10 @@
   margin: 0.8rem;
   background-color: rgba(252, 250, 248);
  
+}
+
+.card-wrapper:hover{
+  cursor: pointer;
 }
 
 .card-wrapper::before {
